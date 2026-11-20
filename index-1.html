@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Bryvicy">
+  <title>BRYVICY BROWSER</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <div id="app" class="theme-dark">
+    <!-- Simulated iPhone Status Bar -->
+    <div id="status-bar">
+      <span class="time">9:41</span>
+      <span class="icons">📶 🔋</span>
+    </div>
+
+    <!-- Top Pull-Down Toolbar Trigger -->
+    <div id="top-bar">
+      <button id="menu-toggle" title="Tools & Settings">☰</button>
+      <div id="address-bar" class="hidden">
+        <button id="btn-back" title="Back">←</button>
+        <input type="text" id="url-bar" placeholder="Search or type a site" autocomplete="off">
+        <button id="btn-go" title="Go">→</button>
+        <button id="btn-shield" title="Privacy Shield">🛡️</button>
+      </div>
+      <button id="menu-toggle-right" title="Tools & Settings">⚙️</button>
+    </div>
+
+    <!-- Pull-Down Toolbar (Tools + Settings) -->
+    <div id="pull-down" class="closed">
+      <div class="pull-handle"></div>
+      <h3>Tools & Settings</h3>
+      
+      <div class="tools-row">
+        <button class="tool-btn" data-action="adblock">
+          <span class="icon">🚫</span>
+          <span class="label">Ad Blocker</span>
+          <span class="status" id="ad-status">ON</span>
+        </button>
+        <button class="tool-btn" data-action="popid">
+          <span class="icon">⚠️</span>
+          <span class="label">Pop ID</span>
+        </button>
+        <button class="tool-btn" data-action="bookmarks">
+          <span class="icon">🔖</span>
+          <span class="label">Bookmarks</span>
+        </button>
+        <button class="tool-btn" data-action="history">
+          <span class="icon">🕒</span>
+          <span class="label">History</span>
+        </button>
+      </div>
+      
+      <div class="tools-row">
+        <button class="tool-btn" data-action="privacy">
+          <span class="icon">🔒</span>
+          <span class="label">Privacy</span>
+        </button>
+        <button class="tool-btn" data-action="demo">
+          <span class="icon">🧪</span>
+          <span class="label">Try Demo</span>
+        </button>
+        <button class="tool-btn" data-action="layout">
+          <span class="icon">🎨</span>
+          <span class="label">Layout</span>
+        </button>
+        <button class="tool-btn" data-action="settings">
+          <span class="icon">⚙️</span>
+          <span class="label">Settings</span>
+        </button>
+      </div>
+
+      <div class="settings-inline">
+        <div class="setting">
+          <label>Theme</label>
+          <select id="theme-select">
+            <option value="dark">Dark</option>
+            <option value="light">Light</option>
+            <option value="ocean">Ocean</option>
+          </select>
+        </div>
+        <div class="setting">
+          <label>Ad Strength</label>
+          <select id="ad-strength">
+            <option value="light">Light</option>
+            <option value="medium" selected>Medium</option>
+            <option value="aggressive">Aggressive</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="content">
+      <!-- Homepage - Clean & Centered -->
+      <div id="homepage">
+        <div class="center-content">
+          <div class="logo">
+            <div class="logo-icon">🛡️</div>
+            <h1>BRYVICY</h1>
+            <p class="tagline">Browse Simply. Browse Safely.</p>
+          </div>
+
+          <div class="search-container">
+            <input type="text" id="home-search" placeholder="Search the web privately...">
+            <button id="home-search-btn">Search</button>
+          </div>
+
+          <div class="safety-badge">
+            ✅ 100% Private • No Trackers • Safe for Everyone
+          </div>
+        </div>
+      </div>
+
+      <!-- Web View -->
+      <iframe id="webview" style="display:none;" sandbox="allow-scripts allow-same-origin allow-forms"></iframe>
+    </div>
+
+    <!-- Toast -->
+    <div id="toast" class="hidden"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
