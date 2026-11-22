@@ -163,6 +163,46 @@ table.t td.n,table.t th.n{text-align:right;font-variant-numeric:tabular-nums}
 .legal{font-size:16px;line-height:1.55;color:var(--tx2)}.legal b{color:var(--tx)}.legal ul{padding-left:20px;margin:10px 0}.legal li{margin:8px 0}.legal .cr{font-weight:800;color:var(--tx);margin-top:14px}.legal .disc{font-size:13px;color:var(--tx3)}
 .footlink{color:var(--ac);font-size:12px;text-decoration:underline;padding:4px 2px}
 #printArea{display:none}
+
+/* ===== 1.2 additions: time clock, team, menu builder, add-ons, split, reports ===== */
+#who{flex:none;height:50px;padding:0 14px;border-radius:12px;background:var(--bg3);border:1px solid var(--line);font-weight:800;font-size:15px;max-width:190px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#who:hover{background:var(--bg4)}#who.on{border-color:var(--ok);color:#bbf7d0}
+.pinwrap{max-width:420px;margin:0 auto}
+.pindots{display:flex;justify-content:center;gap:18px;margin:8px 0 14px}
+.pindots i{width:22px;height:22px;border-radius:50%;border:3px solid var(--tx3);transition:background .1s}
+.pindots i.f{background:var(--ac);border-color:var(--ac)}
+.pinmsg{text-align:center;min-height:24px;color:var(--tx2);font-weight:700;margin-bottom:12px}
+.pinmsg.bad{color:#fca5a5}
+.pinpad{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pinpad button{height:82px;border-radius:18px;background:var(--bg3);border:1px solid var(--line);font-size:34px;font-weight:850;font-variant-numeric:tabular-nums}
+.pinpad button:hover{background:var(--bg4)}.pinpad button:active{background:var(--ac2);transform:scale(.97)}
+.pinpad .fn{font-size:19px;color:var(--tx2)}
+.shake{animation:shk .32s}
+@keyframes shk{20%{transform:translateX(-10px)}40%{transform:translateX(10px)}60%{transform:translateX(-6px)}80%{transform:translateX(6px)}}
+.clockg{display:grid;grid-template-columns:minmax(290px,440px) 1fr;gap:18px;align-items:start}
+.who-l .w{display:flex;align-items:center;flex-wrap:wrap;gap:8px 10px;padding:10px 12px;background:var(--bg3);border-radius:12px;margin-bottom:8px}
+.who-l .w b{flex:1;min-width:90px}
+.dot{width:11px;height:11px;border-radius:50%;background:var(--ok);flex:none;box-shadow:0 0 0 3px rgba(34,197,94,.2)}
+.role{font-size:11px;font-weight:800;padding:3px 7px;border-radius:6px;text-transform:uppercase;background:#3b2a5a;color:#e9d5ff;vertical-align:middle;letter-spacing:.4px}
+.role.Bartender{background:#164e63;color:#a5f3fc}
+.tools{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:10px}
+.tools .btn{min-height:60px;font-size:16px}
+.fld{display:block;margin-bottom:6px}.fld input,.fld select{width:100%}
+.mrow{display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid var(--line)}
+.mrow .nm{flex:1;min-width:0;font-weight:700}.mrow .nm small{display:block;color:var(--tx3);font-size:12px;font-weight:600}
+.mrow .pr{font-weight:850;font-variant-numeric:tabular-nums;color:var(--ac);white-space:nowrap}
+.newtag{font-size:10px;font-weight:800;background:var(--ac);color:#03201c;border-radius:5px;padding:1px 5px;margin-left:6px;vertical-align:middle}
+.rng{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:16px}
+.rng input{padding:9px 10px}
+.sc-unit{display:flex;align-items:center;gap:6px;flex-wrap:wrap;padding:8px 10px;background:var(--bg3);border-radius:12px;margin-bottom:6px;border-left:5px solid var(--cc,#888)}
+.sc-unit .n{flex:1;min-width:140px;font-weight:700}.sc-unit .n small{display:block;color:var(--warn);font-size:12px;font-weight:600}
+.sc-unit button{min-width:46px;height:46px;border-radius:10px;background:var(--bg4);font-weight:850}
+.sc-unit button.on{background:var(--ac);color:#03201c}
+.srv{padding:0 14px 4px;font-size:13px;color:var(--tx3);display:flex;gap:8px;align-items:center}
+.srv .lk{padding:4px 8px;font-size:12px}
+details.wk{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin-bottom:8px}
+details.wk summary{cursor:pointer;font-weight:800;display:flex;justify-content:space-between;gap:10px}
+.tw{overflow-x:auto}
 @media (max-width:1050px){:root{--panel:340px}}
 @media (max-width:820px){
  html,body{font-size:16px}
@@ -191,7 +231,13 @@ table.t td.n,table.t th.n{text-align:right;font-variant-numeric:tabular-nums}
  .bars .b{grid-template-columns:110px 1fr 44px}
  #note{bottom:160px}
  .pe-row{grid-template-columns:1fr 92px 64px}
+ #who{height:46px;padding:0 10px;max-width:120px;font-size:14px}
+ .clockg{grid-template-columns:1fr}
+ .pinpad{gap:10px}.pinpad button{height:72px;font-size:30px}
+ .tools{grid-template-columns:repeat(2,1fr)}
 }
+@media (max-width:440px){#clock{display:none}#who{margin-left:auto}#top{gap:6px}.brand{gap:7px}.brand b{font-size:15px}#who{max-width:112px;padding:0 8px;font-size:13px}}
+@media (max-width:370px){.brand small{display:none}.brand b{font-size:14px}#who{max-width:100px}}
 @media print{
  body *{visibility:hidden!important}
  #printArea,#printArea *{visibility:visible!important}
@@ -204,7 +250,7 @@ table.t td.n,table.t th.n{text-align:right;font-variant-numeric:tabular-nums}
 <body>
 <div id="app">
  <header id="top"><div class="brand" data-a="home"><div class="logo"><svg role="img" aria-label="POS-TOASTER toast logo" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M18 90V47C5 42 5 15 28 11C38 3 62 3 72 11C95 15 95 42 82 47V90Q82 96 76 96H24Q18 96 18 90Z" fill="#b8692a" stroke="#6b3a14" stroke-width="2.5" stroke-linejoin="round"/><path d="M25 88V44C14 40 14 21 32 18C41 10 59 10 68 18C86 21 86 40 75 44V88Q75 90 73 90H27Q25 90 25 88Z" fill="#f2c27a"/><path d="M30 80V46C22 42 22 27 35 24C43 17 57 17 65 24C78 27 78 42 70 46V80Z" fill="#e9a94f" opacity=".45"/><g transform="rotate(-8 52 32)"><rect x="40" y="24" width="24" height="15" rx="4" fill="#fde68a" stroke="#d6a51e" stroke-width="1.8"/><rect x="43" y="26.5" width="9" height="3" rx="1.5" fill="#fff8d6"/></g><ellipse cx="33" cy="65" rx="5" ry="3.2" fill="#f2788a" opacity=".75"/><ellipse cx="67" cy="65" rx="5" ry="3.2" fill="#f2788a" opacity=".75"/><circle cx="39" cy="56" r="4.6" fill="#3b2412"/><circle cx="61" cy="56" r="4.6" fill="#3b2412"/><circle cx="40.6" cy="54.4" r="1.6" fill="#fff"/><circle cx="62.6" cy="54.4" r="1.6" fill="#fff"/><path d="M42 66Q50 75 58 66" fill="none" stroke="#3b2412" stroke-width="3" stroke-linecap="round"/></svg></div><div><b>Front Door Tavern</b><small>POS-TOASTER 1.1</small></div></div>
-  <div id="clock"></div><button id="gear" data-a="gear" aria-label="Menu: tabs, payment, reports, prices, settings">⚙</button></header>
+  <div id="clock"></div><button id="who" data-a="who" aria-label="Time clock: clock in or out"></button><button id="gear" data-a="gear" aria-label="Menu: tabs, payment, reports, prices, settings">⚙</button></header>
  <main id="content"></main>
  <aside id="panel" aria-label="Current order"></aside>
  <div id="sheetBar"></div>
@@ -252,8 +298,14 @@ const ADDONS=[['Bacon',2.00],['Tarter',0.50],['Horsey Sauce',0.50],['Sour Cream'
 const NOFREE=['No Onion','No Pickle','No Lettuce','No Tomato','No Cheese','On the Side','Extra Crispy','Light Sauce'];
 const DAYS=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 const DEFAULT_FAVS=['12 traditional','Bacon Cheese Burger','Philly Steak Sandwich','Fries Regular','Coors Light','Miller Lite'];
-const MENU=[];
-(function(){for(const c of CATS){const arr=RAW[c.id];if(!arr)continue;arr.forEach((r,i)=>{const o=r[3]||{};MENU.push({id:c.id+'-'+i,cat:c.id,name:r[0],price:r[1],basePrice:r[1],desc:r[2],estimated:!o.exact,noMods:!!(o.noMods||c.id==='chr'),sauce:!!o.sauce,day:(o.day===undefined?null:o.day),taxExempt:c.id==='chr'})})}})();
+const BASE=[],MENU=[];
+(function(){for(const c of CATS){const arr=RAW[c.id];if(!arr)continue;arr.forEach((r,i)=>{const o=r[3]||{};BASE.push({id:c.id+'-'+i,cat:c.id,name:r[0],price:r[1],basePrice:r[1],desc:r[2],estimated:!o.exact,noMods0:!!o.noMods,noMods:!!(o.noMods||c.id==='chr'),sauce:!!o.sauce,day:(o.day===undefined?null:o.day),taxExempt:c.id==='chr'})})}})();
+/* Builds the live menu: built-in items (with any edits / deletions) + items added with “Add Menu Item”.
+   ITEM keeps deleted items too so old tabs and receipts still resolve. */
+function applyMenu(st){st=st||{};const ed=st.menuEdits||{},cu=st.custom||[];MENU.length=0;for(const k in ITEM)delete ITEM[k];
+ for(const b of BASE){const e=ed[b.id]||{};const cat=e.cat&&CAT[e.cat]&&e.cat!=='spc'?e.cat:b.cat;
+  const m=Object.assign({},b,{name:e.name||b.name,cat,desc:e.desc!=null?e.desc:b.desc,noMods:b.noMods0||cat==='chr',taxExempt:cat==='chr',deleted:!!e.deleted});ITEM[m.id]=m;if(!m.deleted)MENU.push(m)}
+ for(const c of cu){const cat=CAT[c.cat]&&c.cat!=='spc'?c.cat:'app';const m={id:c.id,cat,name:c.name,price:+c.price||0,basePrice:+c.price||0,desc:c.desc||'',estimated:false,noMods:cat==='chr',sauce:false,day:null,taxExempt:cat==='chr',custom:true,deleted:!!c.deleted};ITEM[m.id]=m;if(!m.deleted)MENU.push(m)}}
 
 /* ===== POS-TOASTER 1.1 — app logic ===== */
 const KEY='fdt-pos-toaster-1.1';
@@ -262,12 +314,15 @@ const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'
 const r2=n=>Math.round((n+Number.EPSILON)*100)/100;
 const money=n=>'$'+(Math.round(n*100)/100).toFixed(2);
 const CAT=Object.fromEntries(CATS.map(c=>[c.id,c]));
-const ITEM=Object.fromEntries(MENU.map(m=>[m.id,m]));
+const ITEM={};applyMenu({});
 const byName=n=>MENU.find(m=>m.name===n);
-function fresh(){return{tabs:[],activeId:null,closed:[],favs:DEFAULT_FAVS.map(n=>byName(n)).filter(Boolean).map(m=>m.id),recents:[],prices:{},taxRate:6,seq:1,orderNo:1001}}
+function fresh(){return{tabs:[],activeId:null,closed:[],favs:DEFAULT_FAVS.map(n=>byName(n)).filter(Boolean).map(m=>m.id),recents:[],prices:{},taxRate:6,seq:1,orderNo:1001,emps:[],punches:[],curEmp:null,mgrPin:'0000',menuEdits:{},custom:[],addons:[]}}
 let S;
 function load(){try{S=Object.assign(fresh(),JSON.parse(localStorage.getItem(KEY)||'{}'))}catch(e){S=fresh()}
- S.favs=S.favs.filter(id=>ITEM[id]);S.recents=S.recents.filter(id=>ITEM[id]);
+ ['emps','punches','custom','addons','tabs','closed','favs','recents'].forEach(k=>{if(!Array.isArray(S[k]))S[k]=[]});['menuEdits','prices'].forEach(k=>{if(!S[k]||typeof S[k]!=='object')S[k]={}});
+ if(!/^\d{4}$/.test(String(S.mgrPin)))S.mgrPin='0000';applyMenu(S);
+ if(S.curEmp&&!S.emps.find(e=>e.id===S.curEmp&&!e.removed))S.curEmp=null;
+ {const vis=new Set(MENU.map(m=>m.id));S.favs=S.favs.filter(id=>vis.has(id));S.recents=S.recents.filter(id=>vis.has(id))}
  S.tabs.forEach(t=>t.lines=t.lines.filter(l=>ITEM[l.itemId]));
  if(S.activeId&&!S.tabs.find(t=>t.id===S.activeId))S.activeId=S.tabs[0]?S.tabs[0].id:null}
 function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
@@ -283,7 +338,7 @@ const lineTotal=l=>r2(unit(l)*l.qty);
 function totals(t){let sub=0,taxable=0,food=0;for(const l of t.lines){const v=lineTotal(l);sub+=v;if(!ITEM[l.itemId].taxExempt){taxable+=v;food+=v}}
  sub=r2(sub);const tax=r2(taxable*S.taxRate/100);let tip=0;if(t.tipAmt!=null)tip=r2(t.tipAmt);else if(t.tipPct)tip=r2(food*t.tipPct/100);
  const total=r2(sub+tax+tip);const paid=r2((t.payments||[]).reduce((a,p)=>a+p.amount,0));return{sub,tax,tip,total,paid,rem:r2(total-paid),food:r2(food)}}
-function newTab(name){name=(name||'').trim()||('Tab '+S.seq);S.seq++;const t={id:'t'+Date.now().toString(36)+Math.random().toString(36).slice(2,6),name,created:Date.now(),lines:[],payments:[],tipPct:null,tipAmt:null};S.tabs.push(t);S.activeId=t.id;save();return t}
+function newTab(name){name=(name||'').trim()||('Tab '+S.seq);S.seq++;const t={id:'t'+Date.now().toString(36)+Math.random().toString(36).slice(2,6),name,created:Date.now(),lines:[],payments:[],tipPct:null,tipAmt:null,empId:S.curEmp||null};S.tabs.push(t);S.activeId=t.id;save();return t}
 function ensureTab(){return active()||newTab()}
 /* ---------- adding ---------- */
 function addItem(id,mods){const m=ITEM[id];if(!m)return;const t=ensureTab();mods=mods||[];
@@ -291,7 +346,7 @@ function addItem(id,mods){const m=ITEM[id];if(!m)return;const t=ensureTab();mods
  if(l)l.qty++;else{l={uid:'l'+Date.now().toString(36)+Math.random().toString(36).slice(2,7),itemId:id,qty:1,mods:mods.slice(),sent:false,paid:false};t.lines.push(l)}
  S.recents=[id,...S.recents.filter(x=>x!==id)].slice(0,16);save();notify('Added: '+m.name+(mods.length?' ('+mods.map(x=>x.n).join(', ')+')':''));render();bump()}
 function bump(){const b=$('#sheetBar .btn');if(b){b.animate&&b.animate([{transform:'scale(1.08)'},{transform:'scale(1)'}],{duration:180})}}
-function tapItem(id){const m=ITEM[id];if(m.sauce)return openSauce(id);addItem(id)}
+function tapItem(id){const m=ITEM[id];if(!m)return;if(m.sauce)return openSauce(id);if(addonsFor(m).length)return openAddonPick(id,[]);addItem(id)}
 /* ---------- render ---------- */
 function tileHTML(m,opts={}){const c=CAT[m.cat];const fav=S.favs.includes(m.id);const td=m.day!=null&&m.day===today();
  return `<button class="tile${td?' today':''}" style="--cc:${c.color}" data-a="item" data-id="${m.id}" title="${esc(m.desc||'')}">
@@ -312,25 +367,26 @@ function homeHTML(){let quick;const d=today();
  const emptyMsg={fav:'No favorites yet — tap ☆ on any item to add it here.',rec:'Nothing yet — items you ring in show up here.',day:'No day-only specials on '+DAYS[d]+'.'}[U.quick];
  return `<div class="sec"><div class="seg"><button data-a="quick" data-id="fav" class="${U.quick==='fav'?'on':''}">★ Favorites</button><button data-a="quick" data-id="rec" class="${U.quick==='rec'?'on':''}">↺ Recent</button><button data-a="quick" data-id="day" class="${U.quick==='day'?'on':''}">⭐ ${DAYS[d]}</button></div></div>
  <div class="quick">${quick.length?quick.map(m=>tileHTML(m)).join(''):`<div class="none">${emptyMsg}</div>`}</div>
- <div class="cats">${CATS.map(c=>`<button class="catb" style="--cc:${c.color}" data-a="cat" data-id="${c.id}"><i>${c.icon}</i><div><b>${esc(c.short||c.name)}</b><br><span>${catItems(c.id).length} items</span></div></button>`).join('')}</div>`}
+ <div class="cats">${CATS.map(c=>`<button class="catb" style="--cc:${c.color}" data-a="cat" data-id="${c.id}"><i>${c.icon}</i><div><b>${esc(c.short||c.name)}</b><br><span>${catItems(c.id).length} items</span></div></button>`).join('')}</div>
+ <div class="lbl" style="margin-top:22px">Quick buttons</div><div class="tools"><button class="btn" data-a="who">⏱ Clock In / Out</button><button class="btn" data-a="additem">＋ Add Menu Item</button><button class="btn" data-a="go" data-id="addons">➕ Add-On</button><button class="btn" data-a="go" data-id="menu">📖 Open Menu</button><button class="btn" data-a="go" data-id="team">👥 Team</button><button class="btn" data-a="go" data-id="reports">📊 Sales Report</button></div>`}
 function catHTML(){const c=CAT[U.cat];const items=catItems(c.id);const d=today();
  return `<h1><span class="sw" style="--cc:${c.color}"></span>${esc(c.name)}</h1>${c.id==='spc'?`<p class="muted" style="margin-top:-6px;color:var(--tx3)">Today is ${DAYS[d]} — today's specials are outlined in yellow.</p>`:''}
  <div class="grid">${items.map(m=>tileHTML(m)).join('')}</div>`}
 function legend(){return `<p class="legend"><b>*</b> Prices marked * are estimates — verify before use (⚙ Menu → Menu Prices). Tax shown is an estimate (PA ${S.taxRate}%).</p>`}
 function footer(){return `<div id="foot">© 2026 Sean James Bryson · All rights reserved · <button class="footlink" data-a="about">Properties &amp; Licensing</button><br>Front Door Tavern · POS-TOASTER 1.1 · Unofficial demo for training/fun — not affiliated with Toast, Inc. Data stays in this browser.</div>`}
-function render(){renderContent();renderPanel();save()}
+function render(){renderContent();renderPanel();renderWho();save()}
 function renderContent(){const el=$('#content');const keepFocus=document.activeElement&&document.activeElement.id==='q';const pos=keepFocus?document.activeElement.selectionStart:0;
  let h='';
  if(['home','cat'].includes(U.screen)){h=searchBar()+(U.q.trim()?searchResults():U.screen==='cat'?catHTML():homeHTML())+legend()}
- else if(U.screen==='tabs')h=tabsHTML();else if(U.screen==='pay')h=payHTML();else if(U.screen==='reports')h=reportsHTML();else if(U.screen==='prices')h=pricesHTML();else if(U.screen==='settings')h=settingsHTML();
+ else{const f={tabs:tabsHTML,pay:payHTML,reports:reportsHTML,prices:pricesHTML,settings:settingsHTML,clock:clockHTML,team:teamHTML,hours:hoursHTML,menu:menuHTML,addons:addonsHTML,splitcheck:splitHTML}[U.screen];if(GATED.has(U.screen)&&!mgrOk()){U.screen='home';h=searchBar()+homeHTML()}else{if(GATED.has(U.screen))U.mgrUntil=Date.now()+MGR_MS;h=f?f():''}}
  el.innerHTML=h+footer();
  if(keepFocus){const q=$('#q');if(q){q.focus();try{q.setSelectionRange(pos,pos)}catch(e){}}}}
 function renderPanel(){const t=active();const p=$('#panel');
  const strip=`<div class="tabs">${S.tabs.map(x=>`<button class="tabc${x.id===S.activeId?' on':''}" data-a="switch" data-id="${x.id}">${esc(x.name)}<small>${x.lines.reduce((a,l)=>a+l.qty,0)||''}</small></button>`).join('')}<button class="tabc" data-a="newtab" aria-label="New tab">＋ Tab</button></div>`;
  let body;
  if(!t){body=`<div class="lines"><div class="empty"><div class="e">🧾</div><p><b>No open tab.</b><br>Tap any item to start one automatically, or tap <b>New Tab</b>.</p></div></div>`}
- else if(!t.lines.length){body=`<div class="ph"><b>${esc(t.name)}</b><button class="lk" data-a="renametab">Rename</button><button class="lk" id="closeSheet" data-a="sheet">▼ Menu</button></div><div class="lines"><div class="empty"><div class="e">🍽️</div><p>Order is empty.<br>Tap items on the left to add them.</p><button class="btn bad" data-a="closetab">Close empty tab</button></div></div>`}
- else{body=`<div class="ph"><b>${esc(t.name)}</b><button class="lk" data-a="print">🖨 Check</button><button class="lk" id="closeSheet" data-a="sheet">▼ Menu</button></div><div class="lines">${t.lines.map(l=>{const m=ITEM[l.itemId];const c=CAT[m.cat];
+ else if(!t.lines.length){body=`<div class="ph"><b>${esc(t.name)}</b><button class="lk" data-a="renametab">Rename</button><button class="lk" id="closeSheet" data-a="sheet">▼ Menu</button></div>${srvLine(t)}<div class="lines"><div class="empty"><div class="e">🍽️</div><p>Order is empty.<br>Tap items on the left to add them.</p><button class="btn bad" data-a="closetab">Close empty tab</button></div></div>`}
+ else{body=`<div class="ph"><b>${esc(t.name)}</b><button class="lk" data-a="split2">✂ Split</button><button class="lk" data-a="print">🖨 Check</button><button class="lk" id="closeSheet" data-a="sheet">▼ Menu</button></div>${srvLine(t)}<div class="lines">${t.lines.map(l=>{const m=ITEM[l.itemId];const c=CAT[m.cat];
   return `<div class="line${l.paid?' paid':''}" style="--cc:${c.color}"><div class="r1"><div class="n">${esc(m.name)}${isEst(m)?'<sup style="color:var(--warn)">*</sup>':''}</div><div class="p">${money(lineTotal(l))}</div></div>
   ${l.mods.length?`<div class="md">${l.mods.map(x=>esc(x.n)+(x.p?' +'+money(x.p):'')).join(' · ')}</div>`:''}
   <div class="r2">${l.paid?'<span class="tag pd">Paid</span><span class="sp"></span><span class="qv">×'+l.qty+'</span>':`<button class="qb" data-a="dec" data-id="${l.uid}" aria-label="Less">−</button><span class="qv">${l.qty}</span><button class="qb" data-a="inc" data-id="${l.uid}" aria-label="More">+</button><span class="sp"></span>${m.noMods?'':`<button class="sm" data-a="mods" data-id="${l.uid}">Mods</button>`}<span class="tag ${l.sent?'sent':'new'}">${l.sent?'Sent':'New'}</span>`}</div></div>`}).join('')}</div>`}
@@ -344,12 +400,13 @@ function renderPanel(){const t=active();const p=$('#panel');
 /* ---------- tabs screen ---------- */
 function tabsHTML(){return `<div class="bar"><button class="homeBtn" data-a="home">⌂ Home</button><h1 style="margin:0;flex:1">Open Tabs</h1><button class="btn pri" data-a="newtab">＋ New Tab</button></div>
  ${S.tabs.length?`<div class="cards">${S.tabs.map(t=>{const T=totals(t);const n=t.lines.reduce((a,l)=>a+l.qty,0);const mins=Math.round((Date.now()-t.created)/60000);
- return `<div class="card${t.id===S.activeId?' on':''}"><h3>${esc(t.name)}</h3><div class="muted" style="color:var(--tx3)">${n} items · open ${mins<60?mins+' min':Math.floor(mins/60)+'h '+mins%60+'m'}</div><div class="amt">${money(T.rem)}</div>
+ return `<div class="card${t.id===S.activeId?' on':''}"><h3>${esc(t.name)}</h3><div class="muted" style="color:var(--tx3)">${t.empId&&empName(t.empId)?'👤 '+esc(empName(t.empId))+' · ':''}${n} items · open ${mins<60?mins+' min':Math.floor(mins/60)+'h '+mins%60+'m'}</div><div class="amt">${money(T.rem)}</div>
  <div class="row"><button class="btn" data-a="switch" data-id="${t.id}">Open</button><button class="btn pri" data-a="paytab" data-id="${t.id}" ${n?'':'disabled'}>Pay</button><button class="btn bad" data-a="voidtab" data-id="${t.id}">${n?'Void':'Close'}</button></div></div>`}).join('')}</div>`:'<div class="empty"><div class="e">🗂️</div><p>No open tabs.</p></div>'}`}
 /* ---------- payment ---------- */
 function payHTML(){const t=active();if(!t||!t.lines.length){return `<div class="bar"><button class="homeBtn" data-a="home">⌂ Home</button><h1 style="margin:0">Payment</h1></div><div class="empty"><div class="e">💳</div><p>No tab with items selected. Pick a tab from the strip on the right (or ⚙ → Open Tabs).</p></div>`}
  const T=totals(t);const P=U.pay;let charge=T.rem;
- if(P.split==='even'){charge=r2(T.rem/Math.max(1,P.n))}
+ let E=null,un=[],each=0;
+ if(P.split==='even'){if(!t.even)t.even={n:2,paid:[]};E=t.even;for(let i=0;i<E.n;i++)if(E.paid[i]==null)un.push(i);if(P.guest==null||E.paid[P.guest]!=null)P.guest=un.length?un[0]:null;each=un.length?(un.length===1?T.rem:r2(T.rem/un.length)):0;charge=P.guest==null?0:each}
  if(P.split==='item'){const selSub=t.lines.filter(l=>P.sel[l.uid]&&!l.paid).reduce((a,l)=>a+lineTotal(l),0);charge=T.sub?Math.min(T.rem,r2(selSub/T.sub*T.total)):0;const unpaid=t.lines.filter(l=>!l.paid);if(unpaid.length&&unpaid.every(l=>P.sel[l.uid]))charge=T.rem}
  P.charge=charge;
  const tips=[18,20,22];const tipOn=v=>t.tipAmt==null&&t.tipPct===v;
@@ -361,8 +418,10 @@ function payHTML(){const t=active();if(!t||!t.lines.length){return `<div class="
  </div><div class="box">
   <div class="lbl">Tip (on food & drink)</div><div class="opts">${tips.map(v=>`<button class="opt${tipOn(v)?' on':''}" data-a="tip" data-id="${v}">${v}%<small>${money(T.food*v/100)}</small></button>`).join('')}<button class="opt${t.tipAmt!=null?' on':''}" data-a="tipcustom">Custom<small>${t.tipAmt!=null?money(t.tipAmt):'$'}</small></button><button class="opt${!t.tipPct&&t.tipAmt==null?' on':''}" data-a="tip" data-id="0">None</button></div>
   <div class="lbl">Split</div><div class="opts"><button class="opt${!P.split?' on':''}" data-a="split" data-id="">Whole</button><button class="opt${P.split==='even'?' on':''}" data-a="split" data-id="even">Evenly</button><button class="opt${P.split==='item'?' on':''}" data-a="split" data-id="item">By item</button></div>
-  ${P.split==='even'?`<div class="opts">${[2,3,4,5,6].map(n=>`<button class="opt${P.n===n?' on':''}" data-a="splitn" data-id="${n}">${n} ways</button>`).join('')}</div>`:''}
-  ${P.split==='item'?t.lines.filter(l=>!l.paid).map(l=>`<button class="chk${P.sel[l.uid]?' on':''}" data-a="sel" data-id="${l.uid}"><b>${P.sel[l.uid]?'☑':'☐'}</b><span>${l.qty}× ${esc(ITEM[l.itemId].name)}</span><b>${money(lineTotal(l))}</b></button>`).join(''):''}
+  ${P.split==='even'?(()=>{const lock=E.paid.some(x=>x!=null);return `<div class="opts">${[2,3,4,5,6].map(n=>`<button class="opt${E.n===n?' on':''}" data-a="splitn" data-id="${n}" ${lock?'disabled':''}>${n} ways</button>`).join('')}<button class="opt${E.n>6?' on':''}" data-a="splitn" data-id="${E.n+1}" ${lock||E.n>=20?'disabled':''}>＋1<small>${E.n>6?E.n+' ways':'more'}</small></button></div>
+  <div id="guests">${Array.from({length:E.n},(_,i)=>E.paid[i]!=null?`<div class="chk on" style="opacity:.6"><b>✓</b><span>Guest ${i+1} — paid</span><b>${money(E.paid[i])}</b></div>`:`<button class="chk${P.guest===i?' on':''}" data-a="guest" data-id="${i}"><b>${P.guest===i?'◉':'○'}</b><span>Guest ${i+1}</span><b>${money(each)}</b></button>`).join('')}</div>
+  ${!un.length&&T.rem>0.009?'<p style="color:var(--warn)">Every guest has paid — tap <b>Whole</b> to collect the rest.</p>':''}`})():''}
+  ${P.split==='item'?`<button class="btn" style="width:100%;margin-bottom:8px" data-a="split2">✂ Move items onto separate checks</button>`:''}${P.split==='item'?t.lines.filter(l=>!l.paid).map(l=>`<button class="chk${P.sel[l.uid]?' on':''}" data-a="sel" data-id="${l.uid}"><b>${P.sel[l.uid]?'☑':'☐'}</b><span>${l.qty}× ${esc(ITEM[l.itemId].name)}</span><b>${money(lineTotal(l))}</b></button>`).join(''):''}
   <div class="lbl">Charge now</div><div style="font-size:34px;font-weight:900" id="charge">${money(charge)}</div>
   <div class="opts" style="margin-top:12px"><button class="btn big ok" style="flex:1" data-a="cash" ${charge>0?'':'disabled'}>💵 Cash</button><button class="btn big pri" style="flex:1" data-a="card" ${charge>0?'':'disabled'}>💳 Card</button></div>
   ${P.mode==='cash'?`<div class="lbl">Cash tendered</div><input id="tendered" inputmode="decimal" type="number" step="0.01" min="0" placeholder="0.00" value="${esc(P.tendered)}" style="width:100%;font-size:24px">
@@ -370,22 +429,22 @@ function payHTML(){const t=active();if(!t||!t.lines.length){return `<div class="
    <div class="change" id="change">${chg==null?'Enter amount':chg<0?'Short '+money(-chg):'Change: '+money(chg)}</div>
    <button class="btn big ok" style="width:100%;margin-top:10px" data-a="cashdone" ${chg!=null&&chg>=0?'':'disabled'}>Complete Cash Payment</button>`:''}
  </div></div>`}
-function recordPayment(method,extra){const t=active();const amt=U.pay.charge;if(!(amt>0))return;t.payments.push(Object.assign({method,amount:amt,time:Date.now()},extra||{}));
+function recordPayment(method,extra){const t=active();const amt=U.pay.charge;if(!(amt>0))return;t.payments.push(Object.assign({method,amount:amt,time:Date.now(),empId:S.curEmp||t.empId||null},extra||{}));
  if(U.pay.split==='item'){t.lines.forEach(l=>{if(U.pay.sel[l.uid])l.paid=true});U.pay.sel={}}
- if(U.pay.split==='even'&&U.pay.n>1)U.pay.n--;
+ if(U.pay.split==='even'&&t.even&&U.pay.guest!=null){t.even.paid[U.pay.guest]=amt;U.pay.guest=null}
  U.pay.mode=null;U.pay.tendered='';const T=totals(t);
  if(T.rem<=0.009){closeTab(t,T)}else{save();notify(method==='cash'?'Cash received':'Card approved');render()}}
-function closeTab(t,T){const no=S.orderNo++;const rec={id:t.id,no,name:t.name,opened:t.created,closedAt:Date.now(),lines:t.lines.map(l=>({name:ITEM[l.itemId].name,itemId:l.itemId,cat:ITEM[l.itemId].cat,qty:l.qty,unit:unit(l),total:lineTotal(l),mods:l.mods})),sub:T.sub,tax:T.tax,tip:T.tip,total:T.total,payments:t.payments};
+function closeTab(t,T){const no=S.orderNo++;const eid=t.empId||S.curEmp||null;const rec={id:t.id,no,name:t.name,empId:eid,empName:empName(eid),opened:t.created,closedAt:Date.now(),lines:t.lines.map(l=>({name:ITEM[l.itemId].name,itemId:l.itemId,cat:ITEM[l.itemId].cat,qty:l.qty,unit:unit(l),total:lineTotal(l),mods:l.mods})),sub:T.sub,tax:T.tax,tip:T.tip,total:T.total,payments:t.payments};
  S.closed.push(rec);S.tabs=S.tabs.filter(x=>x.id!==t.id);S.activeId=S.tabs.length?S.tabs[S.tabs.length-1].id:null;U.pay={mode:null,split:null,n:2,sel:{},tendered:''};U.screen='home';U.cat=null;save();render();
  const last=t.payments[t.payments.length-1];
  modal('✅ Paid — Order #'+no,receiptHTML(rec)+(last&&last.method==='cash'&&last.change?`<div class="change" style="text-align:center">Change due: ${money(last.change)}</div>`:''),`<button class="btn" data-a="printrec" data-id="${rec.no}">🖨 Print Receipt</button><button class="btn pri" data-a="close">Done</button>`)}
 /* ---------- receipts / tickets ---------- */
-function receiptHTML(r){return `<div class="ticket"><h3>FRONT DOOR TAVERN</h3><div class="c">3121 Old Darlington Rd<br>Beaver Falls, PA</div><hr><div>${esc(r.name)}${r.no?' · Order #'+r.no:''}</div><div>${new Date(r.closedAt||Date.now()).toLocaleString()}</div><hr>
+function receiptHTML(r){return `<div class="ticket"><h3>FRONT DOOR TAVERN</h3><div class="c">3121 Old Darlington Rd<br>Beaver Falls, PA</div><hr><div>${esc(r.name)}${r.no?' · Order #'+r.no:''}</div>${r.empName?`<div>Server: ${esc(r.empName)}</div>`:''}<div>${new Date(r.closedAt||Date.now()).toLocaleString()}</div><hr>
  ${r.lines.map(l=>`<div class="rw it"><span>${l.qty} ${esc(l.name)}</span><span>${money(l.total)}</span></div>${l.mods.map(m=>`<div class="mm">${esc(m.n)}${m.p?' +'+money(m.p):''}</div>`).join('')}`).join('')}<hr>
  <div class="rw"><span>Subtotal</span><span>${money(r.sub)}</span></div><div class="rw"><span>Tax (est.)</span><span>${money(r.tax)}</span></div>${r.tip?`<div class="rw"><span>Tip</span><span>${money(r.tip)}</span></div>`:''}<div class="rw it"><span>TOTAL</span><span>${money(r.total)}</span></div>
  ${(r.payments||[]).map(p=>`<div class="rw"><span>${p.method==='cash'?'Cash':'Card '+(p.last4?'••'+p.last4:'')}</span><span>${money(p.amount)}</span></div>`).join('')}
  ${!r.payments||!r.payments.length?`<hr><div class="c">Suggested tip: 18% ${money(r.food*.18)} · 20% ${money(r.food*.2)} · 22% ${money(r.food*.22)}</div>`:''}<hr><div class="c">Thank you! Come back soon.</div></div>`}
-function checkFor(t){const T=totals(t);return{name:t.name,closedAt:Date.now(),lines:t.lines.map(l=>({name:ITEM[l.itemId].name,qty:l.qty,total:lineTotal(l),mods:l.mods})),sub:T.sub,tax:T.tax,tip:T.tip,total:T.total,payments:t.payments,food:T.food}}
+function checkFor(t){const T=totals(t);return{name:t.name,empName:empName(t.empId),closedAt:Date.now(),lines:t.lines.map(l=>({name:ITEM[l.itemId].name,qty:l.qty,total:lineTotal(l),mods:l.mods})),sub:T.sub,tax:T.tax,tip:T.tip,total:T.total,payments:t.payments,food:T.food}}
 function doPrint(html){$('#printArea').innerHTML=html;setTimeout(()=>{try{window.print()}catch(e){}},50)}
 const BAR=new Set(['bev','ckt','chr']);
 function sendKitchen(){const t=active();if(!t)return;const ls=t.lines.filter(l=>!l.sent&&!l.paid);if(!ls.length){notify('Nothing new to send');return}
@@ -394,16 +453,7 @@ function sendKitchen(){const t=active();if(!t)return;const ls=t.lines.filter(l=>
  const html=`<div class="ticket"><h3>*** KITCHEN TICKET ***</h3><div class="c">${esc(t.name)} · ${new Date().toLocaleTimeString([], {hour:'numeric',minute:'2-digit'})}</div>${sec('— KITCHEN —',k)}${sec('— BAR —',b)}<hr><div class="c">${ls.reduce((a,l)=>a+l.qty,0)} item(s) fired</div></div>`;
  modal('🔥 Sent to Kitchen',html,`<button class="btn" data-a="printticket">🖨 Print Ticket</button><button class="btn pri" data-a="close">OK</button>`);U._ticket=html}
 /* ---------- reports ---------- */
-function reportsHTML(){const d0=new Date();d0.setHours(0,0,0,0);const rs=S.closed.filter(r=>r.closedAt>=d0.getTime());
- const sales=r2(rs.reduce((a,r)=>a+r.sub,0)),tax=r2(rs.reduce((a,r)=>a+r.tax,0)),tips=r2(rs.reduce((a,r)=>a+r.tip,0)),gross=r2(rs.reduce((a,r)=>a+r.total,0));
- const charity=r2(rs.reduce((a,r)=>a+r.lines.filter(l=>l.cat==='chr').reduce((x,l)=>x+l.total,0),0));
- const qty={};rs.forEach(r=>r.lines.forEach(l=>qty[l.name]=(qty[l.name]||0)+l.qty));const top=Object.entries(qty).sort((a,b)=>b[1]-a[1]).slice(0,10);const mx=top.length?top[0][1]:1;
- const pm={cash:0,card:0},pc={cash:0,card:0};rs.forEach(r=>r.payments.forEach(p=>{pm[p.method]=r2((pm[p.method]||0)+p.amount);pc[p.method]=(pc[p.method]||0)+1}));
- return `<div class="bar"><button class="homeBtn" data-a="home">⌂ Home</button><h1 style="margin:0;flex:1">Today's Report</h1></div>
- <div class="stats"><div class="stat"><div class="k">Net sales</div><div class="v" id="r-sales">${money(sales)}</div></div><div class="stat"><div class="k">Orders</div><div class="v" id="r-orders">${rs.length}</div></div><div class="stat"><div class="k">Avg check</div><div class="v">${money(rs.length?gross/rs.length:0)}</div></div><div class="stat"><div class="k">Tax (est.)</div><div class="v">${money(tax)}</div></div><div class="stat"><div class="k">Tips</div><div class="v">${money(tips)}</div></div><div class="stat"><div class="k">Charity/Promo</div><div class="v">${money(charity)}</div></div></div>
- <h2>Top items</h2>${top.length?`<div class="bars">${top.map(([n,q])=>`<div class="b"><span class="n">${esc(n)}</span><div class="track"><div class="fill" style="width:${q/mx*100}%"></div></div><span class="q">${q}</span></div>`).join('')}</div>`:'<p class="muted" style="color:var(--tx3)">No closed orders yet today.</p>'}
- <h2>Payments</h2><table class="t"><tr><th>Method</th><th class="n">Count</th><th class="n">Amount</th></tr><tr><td>💵 Cash</td><td class="n">${pc.cash}</td><td class="n">${money(pm.cash)}</td></tr><tr><td>💳 Card</td><td class="n">${pc.card}</td><td class="n">${money(pm.card)}</td></tr><tr><td><b>Total collected</b></td><td class="n">${pc.cash+pc.card}</td><td class="n"><b>${money(pm.cash+pm.card)}</b></td></tr></table>
- <h2>Closed orders</h2>${rs.length?`<table class="t"><tr><th>#</th><th>Tab</th><th>Time</th><th class="n">Total</th><th></th></tr>${rs.slice().reverse().map(r=>`<tr><td>${r.no}</td><td>${esc(r.name)}</td><td>${new Date(r.closedAt).toLocaleTimeString([], {hour:'numeric',minute:'2-digit'})}</td><td class="n">${money(r.total)}</td><td class="n"><button class="lk" data-a="viewrec" data-id="${r.no}">View</button></td></tr>`).join('')}</table>`:'<p style="color:var(--tx3)">None yet.</p>'}`}
+/* reportsHTML is defined in the 1.2 block below */
 /* ---------- price editor & settings ---------- */
 function pricesHTML(){const f=(U.pf||'').toLowerCase();const estN=MENU.filter(isEst).length;
  return `<div class="bar"><button class="homeBtn" data-a="home">⌂ Home</button><h1 style="margin:0;flex:1">Menu Prices</h1></div>
@@ -415,7 +465,9 @@ function pricesHTML(){const f=(U.pf||'').toLowerCase();const estN=MENU.filter(is
 function settingsHTML(){return `<div class="bar"><button class="homeBtn" data-a="home">⌂ Home</button><h1 style="margin:0;flex:1">Settings</h1></div>
  <div class="box" style="max-width:560px"><div class="lbl">Sales tax rate (estimate)</div><div style="display:flex;gap:10px;align-items:center"><input id="taxin" type="number" step="0.01" min="0" max="20" value="${S.taxRate}" style="width:140px"> % <button class="btn" data-a="taxdef">PA default 6%</button></div>
  <p style="color:var(--tx3);font-size:14px">Pennsylvania 6% (Beaver County, no local add-on). Charity/Promo items are tax-exempt. Verify with your accountant.</p>
- <div class="lbl">Demo data</div><p style="color:var(--tx2);font-size:15px">Clears open tabs, closed orders, favorites, recents and the order counter. Your edited menu prices are kept.</p><button class="btn bad" data-a="reset">Reset demo data</button></div>`}
+ <div class="lbl">Manager PIN</div><p style="color:var(--tx2);font-size:15px;margin-top:0">Protects Team, Weekly Hours, Menu, Add-Ons, Sales Report, Prices and Settings.${S.mgrPin==='0000'?' <b style="color:var(--warn)">Still the default 0000 — please change it.</b>':''}</p>
+ <div style="display:flex;gap:8px;flex-wrap:wrap"><input id="mp1" type="password" inputmode="numeric" maxlength="4" placeholder="New PIN" style="width:130px;letter-spacing:4px" autocomplete="off"><input id="mp2" type="password" inputmode="numeric" maxlength="4" placeholder="Repeat" style="width:130px;letter-spacing:4px" autocomplete="off"><button class="btn pri" data-a="mgrpin">Save PIN</button><button class="btn" data-a="mgrlock">🔒 Lock now</button></div>
+ <div class="lbl">Demo data</div><p style="color:var(--tx2);font-size:15px">Clears open tabs, closed orders, favorites, recents and the order counter. Employees, hours, menu changes, add-ons, prices and the manager PIN are kept.</p><button class="btn bad" data-a="reset">Reset demo data</button></div>`}
 /* ---------- modals ---------- */
 function modal(title,body,foot){$('#modal').innerHTML=`<div class="mbox" role="dialog" aria-modal="true"><div class="mh"><h2>${title}</h2><button class="lk" data-a="close" aria-label="Close">✕</button></div><div class="mb">${body}</div>${foot?`<div class="mf">${foot}</div>`:''}</div>`;$('#modal').classList.add('on')}
 function closeModal(){$('#modal').classList.remove('on');$('#modal').innerHTML='';U.modalCtx=null}
@@ -423,13 +475,13 @@ function openSauce(id){const m=ITEM[id];U.modalCtx={type:'sauce',id};modal('🍗
 function openMods(uid){const t=active();const l=t&&t.lines.find(x=>x.uid===uid);if(!l)return;const m=ITEM[l.itemId];if(m.noMods){notify('No substitutions on this item');return}
  U.modalCtx={type:'mods',uid,sel:l.mods.map(x=>x.n)};drawMods()}
 function drawMods(){const C=U.modalCtx;const t=active();const l=t.lines.find(x=>x.uid===C.uid);const m=ITEM[l.itemId];const on=n=>C.sel.includes(n)?' on':'';
- const grp=(title,list)=>`<div class="lbl">${title}</div><div class="mods">${list.map(([n,p])=>`<button class="mod${on(n)}" data-a="modt" data-id="${esc(n)}">${esc(n)}${p?`<small>+${money(p)}*</small>`:''}</button>`).join('')}</div>`;
+ const grp=(title,list,ex)=>`<div class="lbl">${title}</div><div class="mods">${list.map(([n,p])=>`<button class="mod${on(n)}" data-a="modt" data-id="${esc(n)}">${esc(n)}${p?`<small>+${money(p)}${ex?'':'*'}</small>`:''}</button>`).join('')}</div>`;const ha=addonsFor(m);
  let h='';if(m.sauce)h+=grp('Sauce (pick one)',SAUCES.map(s=>[s,0]));if(m.cat==='bur')h+=grp('Temp',TEMPS.map(s=>[s,0]));
- h+=grp('Changes',NOFREE.map(s=>[s,0]))+grp('Add-ons (est. upcharge)',ADDONS);
+ if(ha.length)h+=grp('House add-ons',ha.map(a=>[a.name,a.price]),true);h+=grp('Changes',NOFREE.map(s=>[s,0]))+grp('Add-ons (est. upcharge)',ADDONS);
  modal('Modify: '+esc(m.name)+(l.qty>1?' ×'+l.qty:''),h,`<button class="btn" data-a="close">Cancel</button><button class="btn pri" data-a="modsave">Save</button>`)}
 function newTabModal(){U.modalCtx={type:'newtab'};const tb=[];for(let i=1;i<=12;i++)tb.push('Table '+i);for(let i=1;i<=8;i++)tb.push('Bar '+i);
  modal('＋ New Tab',`<div class="lbl">Tap a table — or type a name</div><div style="display:flex;gap:8px;margin-bottom:12px"><input id="tabname" placeholder="Name (e.g. Mike, Booth 3)" style="flex:1" autocomplete="off"><button class="btn pri" data-a="mktab">Open</button></div><div class="mods">${tb.map(n=>`<button class="mod" data-a="mktabq" data-id="${n}">${n}</button>`).join('')}</div>`)}
-function menuModal(){modal('⚙ Menu',`<div class="menuList"><button class="btn" data-a="go" data-id="tabs">🗂️ Open Tabs (${S.tabs.length})</button><button class="btn" data-a="go" data-id="pay">💳 Payment</button><button class="btn" data-a="go" data-id="reports">📊 Today's Report</button><button class="btn" data-a="go" data-id="prices">🏷️ Menu Prices</button><button class="btn" data-a="go" data-id="settings">⚙️ Settings &amp; Reset</button><button class="btn" data-a="about">📜 About / Properties &amp; Licensing</button></div>`)}
+function menuModal(){const L=mgrOk()?'':' 🔒';modal('⚙ Menu',`<div class="menuList"><button class="btn" data-a="go" data-id="tabs">🗂️ Open Tabs (${S.tabs.length})</button><button class="btn" data-a="go" data-id="pay">💳 Payment</button><button class="btn" data-a="go" data-id="clock">⏱ Time Clock (${onClock().length} on)</button><button class="btn" data-a="go" data-id="reports">📊 Sales Report${L}</button><button class="btn" data-a="go" data-id="team">👥 Team — Servers &amp; Bartenders${L}</button><button class="btn" data-a="go" data-id="hours">🕒 Weekly Hours${L}</button><button class="btn" data-a="go" data-id="menu">📖 Open Menu (view / edit)${L}</button><button class="btn" data-a="additem">＋ Add Menu Item${L}</button><button class="btn" data-a="go" data-id="addons">➕ Add-Ons${L}</button><button class="btn" data-a="go" data-id="prices">🏷️ Menu Prices${L}</button><button class="btn" data-a="go" data-id="settings">⚙️ Settings, PIN &amp; Reset${L}</button>${mgrOk()?'<button class="btn" data-a="mgrlock">🔒 Lock manager mode</button>':''}<button class="btn" data-a="about">📜 About / Properties &amp; Licensing</button></div>`)}
 function aboutModal(){modal('📜 Properties, Rights, Licensing &amp; Ownership',`<div class="legal">
 <p><b>Front Door Tavern POS-TOASTER 1.1.</b> Properties, rights, licensing and ownership are courtesy of <b>Sean James Bryson</b>. Unauthorized use without pre-approved permission is in direct violation of U.S. copyright law and will be sent a cease and desist letter, and TOASTER LLC can pursue the following:</p>
 <ul>
@@ -451,14 +503,14 @@ document.addEventListener('click',e=>{const el=e.target.closest('[data-a]');if(!
  case'quick':U.quick=id;render();break;
  case'fav':e.stopPropagation();S.favs=S.favs.includes(id)?S.favs.filter(x=>x!==id):[...S.favs,id];notify(S.favs.includes(id)?'★ Added to favorites':'Removed from favorites');render();break;
  case'item':tapItem(id);break;
- case'sauce':{const C=U.modalCtx;closeModal();addItem(C.id,[{n:id,p:0}]);break}
+ case'sauce':{const C=U.modalCtx;closeModal();if(addonsFor(ITEM[C.id]).length)openAddonPick(C.id,[{n:id,p:0}]);else addItem(C.id,[{n:id,p:0}]);break}
  case'inc':{const l=t.lines.find(x=>x.uid===id);if(l){l.qty++;render()}break}
  case'dec':{const l=t.lines.find(x=>x.uid===id);if(l){l.qty--;if(l.qty<=0){t.lines=t.lines.filter(x=>x!==l);notify('Removed '+ITEM[l.itemId].name)}render()}break}
  case'mods':openMods(id);break;
  case'modt':{const C=U.modalCtx;const m=ITEM[active().lines.find(x=>x.uid===C.uid).itemId];
   const excl=g=>{if(g.includes(id))C.sel=C.sel.filter(x=>!g.includes(x)||x===id)};
   if(C.sel.includes(id))C.sel=C.sel.filter(x=>x!==id);else{C.sel.push(id);if(m.sauce)excl(SAUCES);excl(TEMPS)}drawMods();break}
- case'modsave':{const C=U.modalCtx;const l=active().lines.find(x=>x.uid===C.uid);const pm=Object.fromEntries(ADDONS);
+ case'modsave':{const C=U.modalCtx;const l=active().lines.find(x=>x.uid===C.uid);const pm=Object.assign(Object.fromEntries(ADDONS),Object.fromEntries(S.addons.map(a=>[a.name,a.price])));
   const nm=C.sel.map(n=>({n,p:pm[n]||0}));if(l.sent&&JSON.stringify(nm)!==JSON.stringify(l.mods))l.sent=false;l.mods=nm;closeModal();render();notify('Modifiers saved');break}
  case'switch':S.activeId=id;U.pay={mode:null,split:null,n:2,sel:{},tendered:''};if(U.screen==='tabs'){U.screen='home'}render();notify('Switched to '+active().name);break;
  case'newtab':newTabModal();setTimeout(()=>{const i=$('#tabname');i&&i.focus()},30);break;
@@ -476,8 +528,8 @@ document.addEventListener('click',e=>{const el=e.target.closest('[data-a]');if(!
  case'backorder':U.screen='home';render();break;
  case'tip':t.tipAmt=null;t.tipPct=+id||null;render();break;
  case'tipcustom':{const v=prompt('Custom tip amount ($)',t.tipAmt!=null?t.tipAmt:'');if(v===null)break;const n=parseFloat(v);if(isNaN(n)||n<0){notify('Enter a valid amount');break}t.tipAmt=r2(n);t.tipPct=null;render();break}
- case'split':U.pay.split=id||null;U.pay.sel={};U.pay.mode=null;render();break;
- case'splitn':U.pay.n=+id;render();break;
+ case'split':U.pay.split=id||null;U.pay.sel={};U.pay.mode=null;U.pay.guest=null;render();break;
+ case'splitn':if(t.even&&!t.even.paid.some(x=>x!=null)){t.even.n=Math.max(2,Math.min(20,+id));t.even.paid=[]}U.pay.guest=null;U.pay.mode=null;render();break;
  case'sel':U.pay.sel[id]=!U.pay.sel[id];render();break;
  case'cash':U.pay.mode='cash';U.pay.tendered='';render();setTimeout(()=>{const i=$('#tendered');i&&i.focus()},30);break;
  case'tender':U.pay.tendered=String(r2(+id).toFixed(2));render();break;
@@ -487,16 +539,19 @@ document.addEventListener('click',e=>{const el=e.target.closest('[data-a]');if(!
  case'sheet':U.sheet=!U.sheet;renderPanel();break;
  case'gear':menuModal();break;
  case'about':closeModal();aboutModal();break;
- case'go':closeModal();U.screen=id;U.sheet=false;render();$('#content').scrollTop=0;break;
+ case'go':closeModal();if(GATED.has(id))needMgr(()=>goScreen(id));else goScreen(id);break;
  case'close':closeModal();break;
  case'resetprices':if(confirm('Reset every edited price back to the estimate?')){S.prices={};render();notify('Prices reset to estimates')}break;
  case'taxdef':S.taxRate=6;render();notify('Tax set to 6%');break;
- case'reset':if(confirm('Reset all demo data (tabs, orders, favorites)?')){const p=S.prices;S=fresh();S.prices=p;U.screen='home';U.q='';render();notify('Demo data reset')}break;
+ case'reset':if(confirm('Reset all demo data (tabs, orders, favorites)?')){const keep={};['prices','emps','punches','mgrPin','menuEdits','custom','addons','curEmp','taxRate'].forEach(k=>keep[k]=S[k]);S=Object.assign(fresh(),keep);U.screen='home';U.q='';render();notify('Demo data reset')}break;
  }});
 document.addEventListener('input',e=>{const el=e.target;
  if(el.id==='q'){U.q=el.value;if(U.q&&U.screen!=='home'&&U.screen!=='cat')U.screen='home';renderContent()}
  else if(el.id==='tendered'){U.pay.tendered=el.value;const ten=parseFloat(el.value);const chg=isNaN(ten)?null:r2(ten-U.pay.charge);$('#change').textContent=chg==null?'Enter amount':chg<0?'Short '+money(-chg):'Change: '+money(chg);document.querySelector('[data-a="cashdone"]').disabled=!(chg!=null&&chg>=0)}
  else if(el.dataset.pe){const v=parseFloat(el.value);if(!isNaN(v)&&v>=0){S.prices[el.dataset.pe]=r2(v);save();const s=el.parentNode.querySelector('.e');s.textContent='✓ set';s.className='e ok';renderPanel()}}
+ else if(el.id==='mf'){U.mf=el.value;renderContent();const p=$('#mf');p.focus();p.setSelectionRange(p.value.length,p.value.length)}
+ else if(el.id==='f-aq'){const C=U.modalCtx;if(C&&C.type==='addon'){syncAddon();C.q=el.value;drawAddonForm();const p=$('#f-aq');p.focus();p.setSelectionRange(p.value.length,p.value.length)}}
+ else if(el.id==='f-pin'||el.id==='mp1'||el.id==='mp2'){const v=el.value.replace(/\D/g,'').slice(0,4);if(v!==el.value)el.value=v}
  else if(el.id==='pf'){U.pf=el.value;renderContent();const p=$('#pf');p.focus();p.setSelectionRange(p.value.length,p.value.length)}
  else if(el.id==='taxin'){const v=parseFloat(el.value);if(!isNaN(v)&&v>=0&&v<=20){S.taxRate=v;save();renderPanel()}}});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){if($('#modal').classList.contains('on'))closeModal();else if(U.q){U.q='';render()}}
@@ -504,6 +559,253 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'){if($('#modal').clas
   else if(e.target.id==='q'){const f=document.querySelector('#content .grid .tile');if(f){tapItem(f.dataset.id)}}
   else if(e.target.id==='tendered'){const b=document.querySelector('[data-a="cashdone"]');if(b&&!b.disabled)b.click()}}
  if(e.key==='/'&&document.activeElement.tagName!=='INPUT'){const q=$('#q');if(q){e.preventDefault();q.focus()}}});
+/* ===== POS-TOASTER 1.2 — team & 4-digit PIN time clock, weekly hours, shift + sales reports,
+   menu builder, add-ons, split checks, manager PIN. Everything is saved in this browser only. ===== */
+const ROLES=['Server','Bartender'];
+const GATED=new Set(['team','hours','menu','addons','reports','prices','settings']);
+const MGR_MS=10*60000;
+const mkId=p=>p+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+const EMP=id=>S.emps.find(e=>e.id===id);
+const empName=id=>{const e=id&&EMP(id);return e?e.name:''};
+const activeEmps=()=>S.emps.filter(e=>!e.removed);
+const openPunch=id=>S.punches.find(p=>p.empId===id&&!p.out);
+const onClock=()=>activeEmps().filter(e=>openPunch(e.id));
+function wkStart(ts){const d=new Date(ts);d.setHours(0,0,0,0);d.setDate(d.getDate()-d.getDay());return d.getTime()}
+function dayStart(ts){const d=new Date(ts);d.setHours(0,0,0,0);return d.getTime()}
+function addDays(ts,n){const d=new Date(ts);d.setDate(d.getDate()+n);return d.getTime()}
+function overlap(p,a,b){const e=p.out||Date.now();return Math.max(0,Math.min(e,b)-Math.max(p.in,a))}
+function hoursFor(empId,a,b){return S.punches.filter(p=>p.empId===empId).reduce((s,p)=>s+overlap(p,a,b),0)/36e5}
+const fmtH=h=>{const m=Math.round(h*60);return Math.floor(m/60)+'h '+String(m%60).padStart(2,'0')+'m'};
+const decH=h=>(Math.round(h*100)/100).toFixed(2);
+const fT=ts=>new Date(ts).toLocaleTimeString([], {hour:'numeric',minute:'2-digit'});
+const fD=ts=>new Date(ts).toLocaleDateString([], {weekday:'short',month:'short',day:'numeric'});
+const fDT=ts=>fD(ts)+' '+fT(ts);
+const weekLabel=ws=>fD(ws)+' – '+fD(addDays(ws,6));
+const ymd=ts=>{const d=new Date(ts);return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')};
+const parseYmd=s=>{const m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(s||'');return m?new Date(+m[1],+m[2]-1,+m[3]).getTime():null};
+function bar(title,right){return `<div class="bar"><button class="homeBtn" data-a="home">⌂ Home</button><h1 style="margin:0;flex:1;font-size:24px">${title}</h1>${right||''}</div>`}
+function goScreen(id){U.screen=id;U.sheet=false;U.pin='';render();$('#content').scrollTop=0}
+function renderWho(){const b=$('#who');if(!b)return;const e=S.curEmp&&EMP(S.curEmp);b.textContent=e?'👤 '+e.name:'⏱ Clock In';b.classList.toggle('on',!!(e&&openPunch(e.id)))}
+function srvLine(t){const n=empName(t.empId);const me=S.curEmp&&S.curEmp!==t.empId&&EMP(S.curEmp);
+ if(!n&&!me)return '';return `<div class="srv">👤 ${n?esc(n):'No server'}${me?`<button class="lk" data-a="taketab">Assign to ${esc(EMP(S.curEmp).name)}</button>`:''}</div>`}
+/* ---------- manager PIN ---------- */
+const mgrOk=()=>(U.mgrUntil||0)>Date.now();
+function needMgr(fn){if(mgrOk()){U.mgrUntil=Date.now()+MGR_MS;fn();return}
+ U.pin='';U.mgrNext=fn;modal('🔒 Manager PIN',pinPadHTML('mgr','Manager PIN required')+(S.mgrPin==='0000'?'<p style="color:var(--tx3);font-size:13px;text-align:center">Default PIN is 0000 — change it in ⚙ Settings.</p>':''),`<button class="btn" data-a="close">Cancel</button>`)}
+/* ---------- PIN keypad ---------- */
+function pinPadHTML(ctx,msg){const n=(U.pin||'').length;
+ return `<div class="pinwrap" data-ctx="${ctx}"><div class="pindots">${[0,1,2,3].map(i=>`<i class="${i<n?'f':''}"></i>`).join('')}</div><div class="pinmsg">${msg||'Enter your 4-digit PIN'}</div>
+ <div class="pinpad">${['1','2','3','4','5','6','7','8','9','clr','0','back'].map(k=>`<button class="${k.length>1?'fn':''}" data-a="pk" data-id="${k}" aria-label="${k==='clr'?'Clear':k==='back'?'Backspace':k}">${k==='clr'?'Clear':k==='back'?'⌫':k}</button>`).join('')}</div></div>`}
+function pinWrap(){return $('#modal.on .pinwrap')||($('#modal.on')?null:$('#content .pinwrap'))}
+function pinKey(k){const w=pinWrap();if(!w||U.pinBusy)return;U.pin=U.pin||'';
+ if(k==='clr')U.pin='';else if(k==='back')U.pin=U.pin.slice(0,-1);else if(/^\d$/.test(k)&&U.pin.length<4)U.pin+=k;
+ w.querySelectorAll('.pindots i').forEach((d,i)=>d.classList.toggle('f',i<U.pin.length));const m=w.querySelector('.pinmsg');if(m.classList.contains('bad')){m.classList.remove('bad');m.textContent=w.dataset.ctx==='mgr'?'Manager PIN required':'Enter your 4-digit PIN'}
+ if(U.pin.length===4){U.pinBusy=true;setTimeout(()=>{U.pinBusy=false;submitPin(w.dataset.ctx)},140)}}
+function pinErr(msg){U.pin='';const w=pinWrap();if(!w)return;w.querySelectorAll('.pindots i').forEach(d=>d.classList.remove('f'));const m=w.querySelector('.pinmsg');m.textContent=msg;m.classList.add('bad');w.classList.remove('shake');void w.offsetWidth;w.classList.add('shake')}
+function submitPin(ctx){const pin=U.pin;
+ if(ctx==='mgr'){if(pin===S.mgrPin){U.mgrUntil=Date.now()+MGR_MS;const nx=U.mgrNext;U.mgrNext=null;U.pin='';closeModal();notify('🔓 Manager mode on (10 min)');nx&&nx()}else pinErr('Wrong manager PIN — try again');return}
+ if(ctx==='clock'){const e=activeEmps().find(x=>x.pin===pin);if(!e){pinErr(activeEmps().length?'PIN not found — try again':'No employees yet — a manager adds the team first');return}
+  U.pin='';if(openPunch(e.id))clockPrompt(e);else clockIn(e)}}
+/* ---------- clock in / out ---------- */
+function clockIn(e){const now=Date.now();S.punches.push({id:mkId('p'),empId:e.id,in:now,out:null});S.curEmp=e.id;save();render();
+ const ws=wkStart(now);U.modalCtx={type:'clkin'};
+ modal('⏱ Clocked In',`<div class="empty" style="padding:16px"><div class="e">👋</div><h2 id="clkmsg">Welcome, ${esc(e.name)}!</h2><p>Clocked in at <b>${fT(now)}</b> · <span class="role ${e.role}">${e.role}</span></p><p>This week so far: <b>${fmtH(hoursFor(e.id,ws,addDays(ws,7)))}</b></p><p style="color:var(--tx3);font-size:14px">New tabs you open are credited to you for your shift report.</p></div>`,`<button class="btn pri big" data-a="close" style="flex:1">OK</button>`)}
+function clockPrompt(e){const p=openPunch(e.id);U.modalCtx={type:'clk',empId:e.id};
+ modal('⏱ '+esc(e.name),`<p style="font-size:18px;margin-top:0"><span class="role ${e.role}">${e.role}</span> On the clock since <b>${fT(p.in)}</b> (${fmtH((Date.now()-p.in)/36e5)}).</p><p style="color:var(--tx3);font-size:14px">Clock out to end your shift and see your shift report. “Ring orders as me” just switches the register to you.</p>`,
+ `<button class="btn" data-a="close">Cancel</button>${S.curEmp!==e.id?`<button class="btn" data-a="asme" data-id="${e.id}">👤 Ring orders as ${esc(e.name)}</button>`:''}<button class="btn bad big" data-a="clockout" data-id="${e.id}">⏹ Clock Out</button>`)}
+function clockOut(empId){const p=openPunch(empId);if(!p)return;p.out=Date.now();
+ if(S.curEmp===empId){const nx=onClock()[0];S.curEmp=nx?nx.id:null}
+ save();render();showShift(p.id)}
+function shiftHTML(p){const e=EMP(p.empId)||{name:'?',role:''};const end=p.out||Date.now();const hrs=(end-p.in)/36e5;
+ const rs=S.closed.filter(r=>r.empId===p.empId&&r.closedAt>=p.in&&r.closedAt<=end);
+ const sum=k=>r2(rs.reduce((a,r)=>a+(r[k]||0),0));const pm={cash:0,card:0};rs.forEach(r=>(r.payments||[]).forEach(x=>pm[x.method]=r2((pm[x.method]||0)+x.amount)));
+ const ws=wkStart(p.in);const wk=hoursFor(p.empId,ws,addDays(ws,7));const row=(a,b)=>`<div class="rw"><span>${a}</span><span>${b}</span></div>`;
+ return `<div class="ticket"><h3>SHIFT REPORT</h3><div class="c">Front Door Tavern</div><hr><div class="rw it"><span>${esc(e.name)}</span><span>${esc(e.role)}</span></div>
+ ${row('Clock in',fDT(p.in))}${row('Clock out',p.out?fDT(p.out):'(still on)')}<div class="rw it"><span>Hours worked</span><span id="sh-hours">${fmtH(hrs)} (${decH(hrs)})</span></div><hr>
+ ${row('Orders closed',rs.length)}${row('Net sales',money(sum('sub')))}${row('Tax (est.)',money(sum('tax')))}<div class="rw it"><span>Tips</span><span id="sh-tips">${money(sum('tip'))}</span></div>${row('Total w/ tax &amp; tips','<span id="sh-sales">'+money(sum('total'))+'</span>')}${row('Cash taken',money(pm.cash))}${row('Card taken',money(pm.card))}<hr>
+ ${row('Week of '+fD(ws),'')}<div class="rw it"><span>Week hours to date</span><span>${fmtH(wk)} (${decH(wk)})</span></div><div class="c" style="font-size:12px">Weekly hours reset Sunday 12:00 AM</div></div>`}
+function showShift(pid){const p=S.punches.find(x=>x.id===pid);if(!p)return;const h=shiftHTML(p);U._shift=h;
+ modal('🧾 Shift Report',h,`<button class="btn" data-a="printshift">🖨 Print</button><button class="btn pri" data-a="close">Done</button>`)}
+function clockHTML(){const now=Date.now(),ws=wkStart(now),we=addDays(ws,7);const oc=onClock();const es=activeEmps();
+ return bar('⏱ Time Clock')+`<div class="clockg"><div class="box">${pinPadHTML('clock')}<p style="color:var(--tx3);font-size:14px;text-align:center;margin-bottom:0">Enter your PIN to clock in. Enter it again to clock out and get your shift report.</p></div>
+ <div><div class="box"><div class="lbl" style="margin-top:0">On the clock now (${oc.length})</div><div class="who-l" id="onclock">${oc.length?oc.map(e=>{const p=openPunch(e.id);return `<div class="w"><span class="dot"></span><b>${esc(e.name)}</b><span class="role ${e.role}">${e.role}</span><span style="color:var(--tx2);font-size:14px">since ${fT(p.in)} · ${fmtH((now-p.in)/36e5)}</span></div>`}).join(''):'<p style="color:var(--tx3);margin:4px 0">Nobody is clocked in.</p>'}</div></div>
+ ${es.length?`<div class="box" style="margin-top:12px"><div class="lbl" style="margin-top:0">Hours this week · ${weekLabel(ws)}</div><table class="t" id="wkhours">${es.map(e=>`<tr><td>${esc(e.name)} <span class="role ${e.role}">${e.role}</span></td><td class="n">${fmtH(hoursFor(e.id,ws,we))}</td></tr>`).join('')}</table><p style="color:var(--tx3);font-size:13px;margin-bottom:0">Resets every Sunday at 12:00 AM. Past weeks are kept in 🕒 Weekly Hours.</p></div>`
+ :`<div class="box" style="margin-top:12px"><b>No employees yet.</b><p style="color:var(--tx2)">A manager adds servers and bartenders (each with a 4-digit PIN) first.</p><button class="btn pri" data-a="go" data-id="team">👥 Add employees</button></div>`}</div></div>`}
+/* ---------- team ---------- */
+function teamHTML(){const ws=wkStart(Date.now()),we=addDays(ws,7);const es=activeEmps();
+ return bar('👥 Team',`<button class="btn pri" data-a="empnew">＋ Add Employee</button>`)+`<p style="color:var(--tx2);margin-top:0">Servers and bartenders, each with their own 4-digit PIN for the time clock.</p>
+ ${es.length?`<div class="cards" id="team">${es.map(e=>`<div class="card"><h3>${esc(e.name)} <span class="role ${e.role}">${e.role}</span></h3><div style="color:var(--tx3)">PIN <b style="color:var(--tx2);letter-spacing:2px">${e.pin}</b> · ${openPunch(e.id)?'🟢 On the clock':'Off the clock'}<br>This week: ${fmtH(hoursFor(e.id,ws,we))}</div><div class="row"><button class="btn" data-a="empedit" data-id="${e.id}">✏️ Edit</button>${openPunch(e.id)?`<button class="btn" data-a="mgrout" data-id="${e.id}">⏹ Clock out</button>`:''}<button class="btn bad" data-a="empdel" data-id="${e.id}">Remove</button></div></div>`).join('')}</div>`
+ :'<div class="empty"><div class="e">👥</div><p>No employees yet. Tap <b>＋ Add Employee</b>.</p></div>'}
+ <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap"><button class="btn" data-a="go" data-id="hours">🕒 Weekly Hours</button><button class="btn" data-a="go" data-id="clock">⏱ Time Clock</button></div>`}
+function empForm(id){const e=id?EMP(id):null;U.modalCtx={type:'emp',id:id||null,role:e?e.role:'Server',v:{name:e?e.name:'',pin:e?e.pin:''}};drawEmp()}
+function syncEmp(){const C=U.modalCtx;C.v={name:$('#f-name').value,pin:$('#f-pin').value}}
+function drawEmp(err){const C=U.modalCtx;
+ modal(C.id?'✏️ Edit Employee':'＋ Add Employee',`<label class="fld"><div class="lbl" style="margin-top:0">Name</div><input id="f-name" value="${esc(C.v.name)}" autocomplete="off" placeholder="e.g. Jess"></label>
+ <div class="lbl">Team</div><div class="opts">${ROLES.map(r=>`<button class="opt${C.role===r?' on':''}" data-a="emprole" data-id="${r}">${r==='Server'?'🍽️':'🍺'} ${r}</button>`).join('')}</div>
+ <label class="fld"><div class="lbl">4-digit PIN</div><div style="display:flex;gap:8px"><input id="f-pin" inputmode="numeric" maxlength="4" pattern="[0-9]*" value="${esc(C.v.pin)}" placeholder="1234" style="flex:1;font-size:22px;letter-spacing:6px" autocomplete="off"><button class="btn" data-a="emprand">🎲 Random</button></div></label>
+ <div class="pinmsg bad" id="f-err" style="margin:8px 0 0">${err||''}</div>`,`<button class="btn" data-a="close">Cancel</button><button class="btn pri" data-a="empsave">Save</button>`)}
+function freePin(){const used=new Set(activeEmps().map(e=>e.pin));for(let i=0;i<500;i++){const p=String(Math.floor(Math.random()*10000)).padStart(4,'0');if(!used.has(p)&&p!==S.mgrPin)return p}return ''}
+function empSave(){syncEmp();const C=U.modalCtx;const name=C.v.name.trim(),pin=C.v.pin.trim();
+ if(!name)return drawEmp('Enter a name.');if(!/^\d{4}$/.test(pin))return drawEmp('PIN must be exactly 4 digits.');
+ if(activeEmps().some(e=>e.pin===pin&&e.id!==C.id))return drawEmp('That PIN is already used by '+esc(activeEmps().find(e=>e.pin===pin).name)+'.');
+ if(C.id){const e=EMP(C.id);e.name=name;e.pin=pin;e.role=C.role}else S.emps.push({id:mkId('e'),name,role:C.role,pin,created:Date.now()});
+ closeModal();render();notify((C.id?'Saved ':'Added ')+name)}
+/* ---------- weekly hours ---------- */
+function weekTable(a,b){const rows=S.emps.map(e=>({e,h:hoursFor(e.id,a,b),n:S.punches.filter(p=>p.empId===e.id&&overlap(p,a,b)>0).length})).filter(x=>x.h>0||(!x.e.removed&&b>Date.now()));
+ const tot=rows.reduce((s,x)=>s+x.h,0);
+ return {tot,html:rows.length?`<div class="tw"><table class="t"><tr><th>Employee</th><th>Team</th><th class="n">Shifts</th><th class="n">Hours</th><th class="n">Decimal</th></tr>${rows.map(x=>`<tr><td>${esc(x.e.name)}${x.e.removed?' <small style="color:var(--tx3)">(removed)</small>':''}</td><td><span class="role ${x.e.role}">${x.e.role}</span></td><td class="n">${x.n}</td><td class="n">${fmtH(x.h)}</td><td class="n">${decH(x.h)}</td></tr>`).join('')}<tr><td colspan="3"><b>Total</b></td><td class="n"><b>${fmtH(tot)}</b></td><td class="n"><b>${decH(tot)}</b></td></tr></table></div>`:'<p style="color:var(--tx3)">No hours.</p>'}}
+function hoursHTML(){const now=Date.now(),ws=wkStart(now),we=addDays(ws,7);const cur=weekTable(ws,we);
+ const shifts=S.punches.filter(p=>overlap(p,ws,we)>0||(!p.out&&p.in<we)).sort((a,b)=>b.in-a.in);
+ let hist='';if(S.punches.length){const first=wkStart(Math.min(...S.punches.map(p=>p.in)));for(let w=addDays(ws,-7);w>=first;w=addDays(w,-7)){const t=weekTable(w,addDays(w,7));if(t.tot<=0)continue;hist+=`<details class="wk"><summary><span>Week of ${weekLabel(w)}</span><span>${fmtH(t.tot)}</span></summary>${t.html}<button class="btn" data-a="printhours" data-id="${w}" style="margin-top:8px">🖨 Print week</button></details>`}}
+ return bar('🕒 Weekly Hours',`<button class="btn" data-a="printhours" data-id="${ws}">🖨 Print</button>`)+`<p style="color:var(--tx2);margin-top:0"><b>This week: ${weekLabel(ws)}</b> · hours reset automatically every Sunday at 12:00 AM. Past weeks are saved below.</p>
+ <div id="curweek">${cur.html}</div><h2>Shifts this week</h2>${shifts.length?`<div class="tw"><table class="t"><tr><th>Employee</th><th>In</th><th>Out</th><th class="n">Hours</th><th></th></tr>${shifts.map(p=>{const e=EMP(p.empId)||{name:'?'};return `<tr><td>${esc(e.name)}</td><td>${fDT(p.in)}</td><td>${p.out?fDT(p.out):'<b style="color:var(--ok)">On now</b>'}</td><td class="n">${fmtH(((p.out||now)-p.in)/36e5)}</td><td class="n" style="white-space:nowrap"><button class="lk" data-a="shiftrep" data-id="${p.id}">Report</button>${p.out?'':` <button class="lk" data-a="mgrout" data-id="${p.empId}">Clock out</button>`}</td></tr>`}).join('')}</table></div>`:'<p style="color:var(--tx3)">No shifts yet this week.</p>'}
+ <h2>Past weeks</h2><div id="history">${hist||'<p style="color:var(--tx3)">No past weeks yet — they appear here after Sunday.</p>'}</div>`}
+function hoursPrint(ws){const t=weekTable(ws,addDays(ws,7));const rows=S.emps.map(e=>({e,h:hoursFor(e.id,ws,addDays(ws,7))})).filter(x=>x.h>0);
+ return `<div class="ticket"><h3>WEEKLY HOURS</h3><div class="c">Front Door Tavern<br>${weekLabel(ws)}</div><hr>${rows.map(x=>`<div class="rw"><span>${esc(x.e.name)} (${esc(x.e.role)})</span><span>${decH(x.h)}</span></div>`).join('')||'<div class="c">No hours</div>'}<hr><div class="rw it"><span>TOTAL</span><span>${decH(t.tot)}</span></div><div class="c" style="font-size:12px">Printed ${fDT(Date.now())}</div></div>`}
+/* ---------- sales report ---------- */
+function repRange(){const R=U.rep||(U.rep={mode:'today'});const now=Date.now();
+ if(R.mode==='week'){const a=wkStart(now);return[a,addDays(a,7),'This week · '+weekLabel(a)]}
+ if(R.mode==='custom'){const a=parseYmd(R.from)??dayStart(now),b=parseYmd(R.to)??a;const lo=Math.min(a,b),hi=Math.max(a,b);return[lo,addDays(hi,1),fD(lo)+(hi!==lo?' – '+fD(hi):'')]}
+ const a=dayStart(now);return[a,addDays(a,1),'Today · '+fD(a)]}
+function repData(){const[a,b,label]=repRange();const rs=S.closed.filter(r=>r.closedAt>=a&&r.closedAt<b);const s=k=>r2(rs.reduce((x,r)=>x+(r[k]||0),0));
+ const items={},cats={},adds={},emps={},pm={},pc={};
+ rs.forEach(r=>{r.lines.forEach(l=>{const it=items[l.name]||(items[l.name]={qty:0,sales:0});it.qty+=l.qty;it.sales=r2(it.sales+l.total);
+  const c=cats[l.cat]||(cats[l.cat]={qty:0,sales:0});c.qty+=l.qty;c.sales=r2(c.sales+l.total);
+  (l.mods||[]).forEach(m=>{if(m.p>0){const d=adds[m.n]||(adds[m.n]={qty:0,sales:0});d.qty+=l.qty;d.sales=r2(d.sales+m.p*l.qty)}})});
+  const en=r.empName||'(no server)';const e=emps[en]||(emps[en]={orders:0,sales:0,tips:0});e.orders++;e.sales=r2(e.sales+r.sub);e.tips=r2(e.tips+r.tip);
+  (r.payments||[]).forEach(p=>{pm[p.method]=r2((pm[p.method]||0)+p.amount);pc[p.method]=(pc[p.method]||0)+1})});
+ const charity=r2(rs.reduce((x,r)=>x+r.lines.filter(l=>l.cat==='chr').reduce((y,l)=>y+l.total,0),0));
+ return{a,b,label,rs,sales:s('sub'),tax:s('tax'),tips:s('tip'),gross:s('total'),charity,items,cats,adds,emps,pm,pc}}
+const sortE=o=>Object.entries(o).sort((x,y)=>y[1].sales-x[1].sales);
+const catName=id=>CAT[id]?CAT[id].icon+' '+CAT[id].name:id;
+function reportsHTML(){const R=U.rep||(U.rep={mode:'today'});const D=repData();const tbl=(h,rows)=>rows.length?`<div class="tw"><table class="t"><tr>${h}</tr>${rows.join('')}</table></div>`:'<p style="color:var(--tx3)">Nothing in this range.</p>';
+ const meth=Object.keys(D.pm);const top=sortE(D.items).slice(0,8);const mx=top.length?Math.max(...top.map(x=>x[1].sales)):1;
+ return bar('📊 Sales Report',`<button class="btn pri" data-a="printrep">🖨 Print</button>`)+`<div class="rng"><div class="seg" id="rngseg"><button data-a="rep" data-id="today" class="${R.mode==='today'?'on':''}">Today</button><button data-a="rep" data-id="week" class="${R.mode==='week'?'on':''}">This Week</button><button data-a="rep" data-id="custom" class="${R.mode==='custom'?'on':''}">Custom</button></div>
+ ${R.mode==='custom'?`<label>From <input type="date" id="rfrom" value="${esc(R.from||ymd(Date.now()))}"></label><label>To <input type="date" id="rto" value="${esc(R.to||ymd(Date.now()))}"></label>`:''}<b style="color:var(--tx2)" id="rlabel">${esc(D.label)}</b></div>
+ <div class="stats"><div class="stat"><div class="k">Net sales</div><div class="v" id="r-sales">${money(D.sales)}</div></div><div class="stat"><div class="k">Orders</div><div class="v" id="r-orders">${D.rs.length}</div></div><div class="stat"><div class="k">Avg check</div><div class="v">${money(D.rs.length?D.gross/D.rs.length:0)}</div></div><div class="stat"><div class="k">Tax (est.)</div><div class="v" id="r-tax">${money(D.tax)}</div></div><div class="stat"><div class="k">Tips</div><div class="v" id="r-tips">${money(D.tips)}</div></div><div class="stat"><div class="k">Gross collected</div><div class="v" id="r-gross">${money(D.gross)}</div></div><div class="stat"><div class="k">Charity/Promo</div><div class="v">${money(D.charity)}</div></div></div>
+ ${top.length?`<h2>Top sellers</h2><div class="bars">${top.map(([n,v])=>`<div class="b"><span class="n">${esc(n)}</span><div class="track"><div class="fill" style="width:${v.sales/mx*100}%"></div></div><span class="q">${v.qty}</span></div>`).join('')}</div>`:''}
+ <h2>By category</h2><div id="r-cats">${tbl('<th>Category</th><th class="n">Qty</th><th class="n">Sales</th>',sortE(D.cats).map(([c,v])=>`<tr><td>${esc(catName(c))}</td><td class="n">${v.qty}</td><td class="n">${money(v.sales)}</td></tr>`))}</div>
+ <h2>By item</h2><div id="r-items">${tbl('<th>Item</th><th class="n">Qty</th><th class="n">Sales</th>',sortE(D.items).map(([n,v])=>`<tr><td>${esc(n)}</td><td class="n">${v.qty}</td><td class="n">${money(v.sales)}</td></tr>`))}</div>
+ ${Object.keys(D.adds).length?`<h2>Add-ons sold</h2><div id="r-adds">${tbl('<th>Add-on</th><th class="n">Qty</th><th class="n">Sales</th>',sortE(D.adds).map(([n,v])=>`<tr><td>${esc(n)}</td><td class="n">${v.qty}</td><td class="n">${money(v.sales)}</td></tr>`))}</div><p style="color:var(--tx3);font-size:13px">Add-on sales are already included in the item totals above.</p>`:''}
+ <h2>Payments</h2><div id="r-pay">${tbl('<th>Type</th><th class="n">Count</th><th class="n">Amount</th>',[...meth.map(m=>`<tr><td>${m==='cash'?'💵 Cash':m==='card'?'💳 Card':esc(m)}</td><td class="n">${D.pc[m]}</td><td class="n">${money(D.pm[m])}</td></tr>`),...(meth.length?[`<tr><td><b>Total collected</b></td><td class="n">${meth.reduce((a,m)=>a+D.pc[m],0)}</td><td class="n"><b>${money(meth.reduce((a,m)=>a+D.pm[m],0))}</b></td></tr>`]:[])])}</div>
+ <h2>By employee</h2>${tbl('<th>Server / Bartender</th><th class="n">Orders</th><th class="n">Net sales</th><th class="n">Tips</th>',sortE(D.emps).map(([n,v])=>`<tr><td>${esc(n)}</td><td class="n">${v.orders}</td><td class="n">${money(v.sales)}</td><td class="n">${money(v.tips)}</td></tr>`))}
+ <h2>Closed orders</h2>${D.rs.length?`<div class="tw"><table class="t"><tr><th>#</th><th>Tab</th><th>Server</th><th>Closed</th><th class="n">Total</th><th></th></tr>${D.rs.slice().reverse().map(r=>`<tr><td>${r.no}</td><td>${esc(r.name)}</td><td>${esc(r.empName||'')}</td><td>${R.mode==='today'?fT(r.closedAt):fDT(r.closedAt)}</td><td class="n">${money(r.total)}</td><td class="n"><button class="lk" data-a="viewrec" data-id="${r.no}">View</button></td></tr>`).join('')}</table></div>`:'<p style="color:var(--tx3)">None in this range.</p>'}`}
+function reportPrint(){const D=repData();const row=(a,b,c)=>`<div class="rw"><span>${a}</span><span>${c!=null?b+' · '+c:b}</span></div>`;
+ return `<div class="ticket"><h3>SALES REPORT</h3><div class="c">Front Door Tavern<br>${esc(D.label)}</div><hr>${row('Orders',D.rs.length)}${row('Net sales',money(D.sales))}${row('Tax (est.)',money(D.tax))}${row('Tips',money(D.tips))}<div class="rw it"><span>GROSS</span><span>${money(D.gross)}</span></div>${row('Charity/Promo',money(D.charity))}
+ <hr><div class="it">BY CATEGORY</div>${sortE(D.cats).map(([c,v])=>row(esc(CAT[c]?CAT[c].name:c),v.qty+'x',money(v.sales))).join('')}
+ <hr><div class="it">BY ITEM</div>${sortE(D.items).map(([n,v])=>row(esc(n),v.qty+'x',money(v.sales))).join('')}
+ ${Object.keys(D.adds).length?`<hr><div class="it">ADD-ONS</div>${sortE(D.adds).map(([n,v])=>row(esc(n),v.qty+'x',money(v.sales))).join('')}`:''}
+ <hr><div class="it">PAYMENTS</div>${Object.keys(D.pm).map(m=>row(m==='cash'?'Cash':m==='card'?'Card':esc(m),D.pc[m]+'x',money(D.pm[m]))).join('')}
+ <hr><div class="it">BY EMPLOYEE</div>${sortE(D.emps).map(([n,v])=>row(esc(n),money(v.sales),'tips '+money(v.tips))).join('')}<hr><div class="c" style="font-size:12px">Printed ${fDT(Date.now())}</div></div>`}
+/* ---------- menu builder ---------- */
+const realCats=()=>CATS.filter(c=>c.id!=='spc');
+function menuHTML(){const f=(U.mf||'').toLowerCase();const delN=BASE.filter(b=>ITEM[b.id]&&ITEM[b.id].deleted).length;
+ return bar('📖 Menu',`<button class="btn pri" data-a="additem">＋ Add Menu Item</button><button class="btn" data-a="go" data-id="addons">➕ Add-Ons</button>`)+`<p style="color:var(--tx2);margin-top:0">${MENU.length} items. Tap ✏️ to change a name, price or category, 🗑 to remove it from the menu.</p>
+ <div class="search" style="margin-bottom:12px"><input id="mf" placeholder="Filter menu…" value="${esc(U.mf||'')}" autocomplete="off"></div>
+ <div id="menulist">${realCats().map(c=>{const it=MENU.filter(m=>m.cat===c.id&&(!f||m.name.toLowerCase().includes(f)));if(!it.length)return'';return `<h2 style="color:${c.color}">${c.icon} ${esc(c.name)} <small style="color:var(--tx3);font-size:14px">(${it.length})</small></h2>${it.map(m=>`<div class="mrow"><span class="nm">${esc(m.name)}${m.custom?'<span class="newtag">NEW</span>':''}${addonsFor(m).length?' <small style="display:inline;color:var(--ac)">➕'+addonsFor(m).length+'</small>':''}<small>${esc(m.desc||'')}</small></span><span class="pr">${money(priceOf(m))}</span><button class="lk" data-a="itemedit" data-id="${m.id}" aria-label="Edit ${esc(m.name)}">✏️</button><button class="lk" data-a="itemdel" data-id="${m.id}" aria-label="Delete ${esc(m.name)}">🗑</button></div>`).join('')}`}).join('')||'<p style="color:var(--tx3)">No items match.</p>'}</div>
+ ${delN?`<p style="margin-top:18px"><button class="btn" data-a="itemrestore">↺ Restore ${delN} removed built-in item${delN>1?'s':''}</button></p>`:''}`}
+function itemForm(id){const m=id?ITEM[id]:null;U.modalCtx={type:'item',id:id||null};const dc=m?m.cat:(U.screen==='cat'&&U.cat&&U.cat!=='spc'?U.cat:'app');
+ modal(m?'✏️ Edit Menu Item':'＋ Add Menu Item',`<label class="fld"><div class="lbl" style="margin-top:0">Name</div><input id="f-iname" value="${m?esc(m.name):''}" placeholder="e.g. Buffalo Chicken Dip" autocomplete="off"></label>
+ <label class="fld"><div class="lbl">Price ($)</div><input id="f-iprice" type="number" step="0.01" min="0" inputmode="decimal" value="${m?priceOf(m).toFixed(2):''}" placeholder="0.00"></label>
+ <label class="fld"><div class="lbl">Category</div><select id="f-icat">${realCats().map(c=>`<option value="${c.id}"${c.id===dc?' selected':''}>${c.icon} ${esc(c.name)}</option>`).join('')}</select></label>
+ <label class="fld"><div class="lbl">Description (optional)</div><input id="f-idesc" value="${m?esc(m.desc||''):''}" placeholder="Short note shown on the tile" autocomplete="off"></label><div class="pinmsg bad" id="f-err" style="margin:8px 0 0"></div>`,
+ `<button class="btn" data-a="close">Cancel</button><button class="btn pri" data-a="itemsave">Save</button>`)}
+function itemSave(){const C=U.modalCtx;const name=$('#f-iname').value.trim(),price=parseFloat($('#f-iprice').value),cat=$('#f-icat').value,desc=$('#f-idesc').value.trim();const er=$('#f-err');
+ if(!name){er.textContent='Enter a name.';return}if(isNaN(price)||price<0||price>9999){er.textContent='Enter a price (e.g. 9.99).';return}
+ const p=r2(price);let id=C.id;
+ if(!id){id=mkId('cu-');S.custom.push({id,name,price:p,cat,desc,created:Date.now()})}
+ else{const m=ITEM[id];if(m.custom){const c=S.custom.find(x=>x.id===id);Object.assign(c,{name,price:p,cat,desc});delete S.prices[id]}
+  else{S.menuEdits[id]=Object.assign(S.menuEdits[id]||{},{name,cat,desc});if(p!==m.basePrice||S.prices[id]!=null)S.prices[id]=p}}
+ applyMenu(S);closeModal();render();notify((C.id?'Saved ':'Added to menu: ')+name)}
+function itemDel(id){const m=ITEM[id];if(!m||!confirm('Remove “'+m.name+'” from the menu?'))return;
+ if(m.custom)S.custom.find(x=>x.id===id).deleted=true;else S.menuEdits[id]=Object.assign(S.menuEdits[id]||{},{deleted:true});
+ S.favs=S.favs.filter(x=>x!==id);S.recents=S.recents.filter(x=>x!==id);S.addons.forEach(a=>a.items=a.items.filter(x=>x!==id));applyMenu(S);render();notify('Removed '+m.name)}
+/* ---------- add-ons ---------- */
+function addonsFor(m){if(!m||m.noMods)return[];return (S.addons||[]).filter(a=>a.items.includes(m.id)||a.cats.includes(m.cat))}
+function addonsHTML(){const A=S.addons;
+ return bar('➕ Add-Ons',`<button class="btn pri" data-a="adnew">＋ New Add-On</button>`)+`<p style="color:var(--tx2);margin-top:0">Add-ons attach to categories or single items. When a server taps one of those items, the add-on choices pop up, and their prices are added to the check.</p>
+ ${A.length?`<div class="cards" id="addonlist">${A.map(a=>`<div class="card"><h3>${esc(a.name)} <span style="color:var(--ac)">${a.price?'+'+money(a.price):'free'}</span></h3><div style="color:var(--tx3);font-size:14px">${[...a.cats.map(c=>esc(catName(c))),...a.items.filter(i=>ITEM[i]).map(i=>esc(ITEM[i].name))].join(' · ')||'Not attached'}</div><div class="row"><button class="btn" data-a="adedit" data-id="${a.id}">✏️ Edit</button><button class="btn bad" data-a="addel" data-id="${a.id}">Delete</button></div></div>`).join('')}</div>`
+ :'<div class="empty"><div class="e">➕</div><p>No add-ons yet. Example: <b>Extra Cheese +$1.00</b> on Burgers.</p></div>'}
+ <h2>Built-in quick add-ons</h2><p style="color:var(--tx3)">Always available under “Mods” on every item: ${ADDONS.map(a=>esc(a[0])+' '+money(a[1])).join(' · ')}</p>`}
+function addonForm(id){const a=id?S.addons.find(x=>x.id===id):null;U.modalCtx={type:'addon',id:id||null,cats:a?a.cats.slice():[],items:a?a.items.slice():[],q:'',v:{name:a?a.name:'',price:a?a.price.toFixed(2):''}};drawAddonForm()}
+function syncAddon(){const C=U.modalCtx;const n=$('#f-aname'),p=$('#f-aprice');if(n)C.v={name:n.value,price:p.value}}
+function drawAddonForm(err){const C=U.modalCtx;const q=C.q.trim().toLowerCase();const seen=new Set();
+ const matches=q?MENU.filter(m=>!m.noMods&&m.name.toLowerCase().includes(q)&&!C.items.includes(m.id)&&!seen.has(m.name)&&seen.add(m.name)).slice(0,10):[];
+ modal(C.id?'✏️ Edit Add-On':'＋ New Add-On',`<div style="display:grid;grid-template-columns:1fr 130px;gap:8px"><label class="fld"><div class="lbl" style="margin-top:0">Add-on name</div><input id="f-aname" value="${esc(C.v.name)}" placeholder="e.g. Extra Cheese" autocomplete="off"></label><label class="fld"><div class="lbl" style="margin-top:0">Price ($)</div><input id="f-aprice" type="number" step="0.01" min="0" inputmode="decimal" value="${esc(C.v.price)}" placeholder="1.00"></label></div>
+ <div class="lbl">Attach to categories</div><div class="mods">${realCats().filter(c=>c.id!=='chr').map(c=>`<button class="mod${C.cats.includes(c.id)?' on':''}" data-a="adcat" data-id="${c.id}">${c.icon} ${esc(c.short||c.name)}</button>`).join('')}</div>
+ <div class="lbl">…and / or specific items</div>${C.items.filter(i=>ITEM[i]).map(i=>`<button class="chk on" data-a="aditem" data-id="${i}"><b>☑</b><span>${esc(ITEM[i].name)}</span></button>`).join('')}
+ <input id="f-aq" placeholder="Search items to attach…" value="${esc(C.q)}" autocomplete="off" style="width:100%;margin-bottom:6px">${matches.map(m=>`<button class="chk" data-a="aditem" data-id="${m.id}"><b>☐</b><span>${esc(m.name)}</span><small style="color:var(--tx3)">${esc(CAT[m.cat].short||CAT[m.cat].name)}</small></button>`).join('')}
+ <div class="pinmsg bad" id="f-err" style="margin:8px 0 0">${err||''}</div>`,`<button class="btn" data-a="close">Cancel</button><button class="btn pri" data-a="adsave">Save Add-On</button>`)}
+function addonSave(){syncAddon();const C=U.modalCtx;const name=C.v.name.trim(),price=parseFloat(C.v.price);
+ if(!name)return drawAddonForm('Enter a name.');if(isNaN(price)||price<0||price>999)return drawAddonForm('Enter a price (0 for free).');
+ if(!C.cats.length&&!C.items.length)return drawAddonForm('Pick at least one category or item to attach it to.');
+ if(S.addons.some(a=>a.name.toLowerCase()===name.toLowerCase()&&a.id!==C.id))return drawAddonForm('An add-on with that name already exists.');
+ const o={name,price:r2(price),cats:C.cats.slice(),items:C.items.slice()};if(C.id)Object.assign(S.addons.find(a=>a.id===C.id),o);else S.addons.push(Object.assign({id:mkId('a')},o));
+ closeModal();render();notify('Add-on saved: '+name)}
+function openAddonPick(id,pre){U.modalCtx={type:'addpick',id,pre:pre||[],sel:[]};drawAddonPick()}
+function drawAddonPick(){const C=U.modalCtx;const m=ITEM[C.id];const list=addonsFor(m);const extra=list.filter(a=>C.sel.includes(a.id)).reduce((s,a)=>s+a.price,0);
+ modal('➕ '+esc(m.name),`${C.pre.length?`<p style="color:var(--warn);margin-top:0">${C.pre.map(x=>esc(x.n)).join(', ')}</p>`:''}<div class="lbl" style="margin-top:0">Add-ons — tap to choose</div><div class="mods">${list.map(a=>`<button class="mod${C.sel.includes(a.id)?' on':''}" data-a="apt" data-id="${a.id}">${esc(a.name)}<small>${a.price?'+'+money(a.price):'no charge'}</small></button>`).join('')}</div>
+ <p style="font-size:18px">Item price: <b id="apTotal">${money(priceOf(m)+extra)}</b></p>`,`<button class="btn" data-a="apskip">No add-ons</button><button class="btn pri big" data-a="apadd">Add to Order</button>`)}
+/* ---------- split check ---------- */
+function unitsOf(t){const u=[];t.lines.filter(l=>!l.paid).forEach(l=>{for(let k=0;k<l.qty;k++)u.push({key:l.uid+'#'+k,l})});return u}
+function splitHTML(){const t=active();if(!t||!t.lines.length)return bar('✂ Split Check')+'<div class="empty"><div class="e">✂</div><p>Open a tab with items first.</p></div>';
+ const T=totals(t);const C=U.sc||(U.sc={n:2,as:{},tab:t.id});if(C.tab!==t.id){C.n=2;C.as={};C.tab=t.id}const paidAny=(t.payments||[]).length>0;const us=unitsOf(t);
+ const sums=Array(C.n).fill(0),cnt=Array(C.n).fill(0);us.forEach(u=>{const c=Math.min(C.as[u.key]||0,C.n-1);sums[c]+=unit(u.l);cnt[c]++});const used=cnt.filter(Boolean).length;
+ return bar('✂ Split · '+esc(t.name),`<button class="homeBtn" data-a="pay">💳 Pay</button>`)+`<div class="payg"><div class="box"><div class="lbl" style="margin-top:0">Split evenly between guests</div><p style="color:var(--tx2);margin-top:0">Everyone pays an equal share of ${money(T.rem)}. Each guest pays separately (cash or card).</p>
+ <div class="opts" id="evenopts">${[2,3,4,5,6,8].map(n=>`<button class="opt" data-a="evengo" data-id="${n}">${n} guests<small>${money(T.rem/n)} each</small></button>`).join('')}</div></div>
+ <div class="box"><div class="lbl" style="margin-top:0">Split by item — move items onto separate checks</div>${paidAny?'<p style="color:var(--warn)">This tab already has a payment, so its items can’t be moved. Use <b>Pay → By item</b> to pay for selected items instead.</p><button class="btn" data-a="pay">💳 Pay by item</button>':
+ `<p style="color:var(--tx2);margin-top:0">Tap a check number next to each item. Each check becomes its own tab you can pay separately.</p>
+ <div class="opts" id="checksum">${sums.map((s,k)=>`<div class="opt" style="cursor:default"><b>Check ${k+1}</b><small>${cnt[k]} item${cnt[k]===1?'':'s'} · ${money(s)}</small></div>`).join('')}<button class="opt" data-a="scadd" ${C.n>=8?'disabled':''}>＋ Check</button></div>
+ <div id="scunits">${us.map(u=>{const m=ITEM[u.l.itemId];const c=Math.min(C.as[u.key]||0,C.n-1);return `<div class="sc-unit" style="--cc:${CAT[m.cat].color}"><span class="n">${esc(m.name)} <span style="color:var(--tx3)">${money(unit(u.l))}</span>${u.l.mods.length?`<small>${u.l.mods.map(x=>esc(x.n)).join(', ')}</small>`:''}</span>${Array.from({length:C.n},(_,k)=>`<button class="${c===k?'on':''}" data-a="scset" data-id="${u.key}|${k}" aria-label="Move to check ${k+1}">${k+1}</button>`).join('')}</div>`}).join('')}</div>
+ <button class="btn big pri" style="width:100%;margin-top:10px" data-a="scgo" ${used>=2?'':'disabled'}>✂ Create ${used>=2?used:''} separate checks</button><p style="color:var(--tx3);font-size:13px">Subtotals shown before tax &amp; tip.</p>`}</div></div>`}
+function splitGo(){const t=active();const C=U.sc;if(!t||!C||(t.payments||[]).length)return;const us=unitsOf(t);const groups=Array.from({length:C.n},()=>({}));
+ us.forEach(u=>{const c=Math.min(C.as[u.key]||0,C.n-1);groups[c][u.l.uid]=(groups[c][u.l.uid]||0)+1});const g=groups.filter(x=>Object.keys(x).length);if(g.length<2)return;
+ const base=t.name;const mk=gr=>Object.entries(gr).map(([luid,q])=>{const l=t.lines.find(x=>x.uid===luid);return{uid:mkId('l'),itemId:l.itemId,qty:q,mods:l.mods.slice(),sent:l.sent,paid:false}});
+ const lines0=g.map(mk);t.lines=lines0[0];t.name=base+' · 1';t.tipAmt=null;t.even=null;const idx=S.tabs.indexOf(t);
+ const nt=lines0.slice(1).map((ls,i)=>({id:mkId('t'),name:base+' · '+(i+2),created:Date.now(),lines:ls,payments:[],tipPct:t.tipPct,tipAmt:null,empId:t.empId||null}));
+ S.tabs.splice(idx+1,0,...nt);U.sc=null;U.screen='tabs';save();render();notify('Split into '+g.length+' checks — pay each one separately')}
+/* ---------- extra actions ---------- */
+const ACT={
+ who:()=>{closeModal();goScreen('clock')},
+ pk:id=>pinKey(id),
+ clockout:id=>{closeModal();clockOut(id)},
+ asme:id=>{S.curEmp=id;closeModal();render();notify('Register is now ringing as '+empName(id))},
+ mgrout:id=>{const e=EMP(id);if(e&&confirm('Clock out '+e.name+' now?'))clockOut(id)},
+ shiftrep:id=>showShift(id),
+ printshift:()=>doPrint(U._shift||''),
+ printhours:id=>doPrint(hoursPrint(+id)),
+ empnew:()=>empForm(null),empedit:id=>empForm(id),
+ emprole:id=>{syncEmp();U.modalCtx.role=id;drawEmp()},
+ emprand:()=>{syncEmp();U.modalCtx.v.pin=freePin();drawEmp()},
+ empsave:()=>empSave(),
+ empdel:id=>{const e=EMP(id);if(!e||!confirm('Remove '+e.name+'? Their past hours stay in the history.'))return;const p=openPunch(id);if(p)p.out=Date.now();e.removed=true;if(S.curEmp===id)S.curEmp=null;render();notify('Removed '+e.name)},
+ taketab:()=>{const t=active();if(t&&S.curEmp){t.empId=S.curEmp;render();notify(t.name+' assigned to '+empName(S.curEmp))}},
+ rep:id=>{U.rep=Object.assign(U.rep||{},{mode:id});if(id==='custom'){const d=ymd(Date.now());U.rep.from=U.rep.from||d;U.rep.to=U.rep.to||d}renderContent()},
+ printrep:()=>doPrint(reportPrint()),
+ additem:()=>{closeModal();needMgr(()=>itemForm(null))},
+ itemedit:id=>itemForm(id),itemsave:()=>itemSave(),itemdel:id=>itemDel(id),
+ itemrestore:()=>{Object.values(S.menuEdits).forEach(e=>e.deleted=false);applyMenu(S);render();notify('Removed items restored')},
+ adnew:()=>addonForm(null),adedit:id=>addonForm(id),adsave:()=>addonSave(),
+ addel:id=>{const a=S.addons.find(x=>x.id===id);if(a&&confirm('Delete add-on “'+a.name+'”?')){S.addons=S.addons.filter(x=>x!==a);render();notify('Deleted '+a.name)}},
+ adcat:id=>{syncAddon();const C=U.modalCtx;C.cats=C.cats.includes(id)?C.cats.filter(x=>x!==id):[...C.cats,id];drawAddonForm()},
+ aditem:id=>{syncAddon();const C=U.modalCtx;C.items=C.items.includes(id)?C.items.filter(x=>x!==id):[...C.items,id];if(!C.items.includes(id)||true)C.q='';drawAddonForm()},
+ apt:id=>{const C=U.modalCtx;C.sel=C.sel.includes(id)?C.sel.filter(x=>x!==id):[...C.sel,id];drawAddonPick()},
+ apskip:()=>{const C=U.modalCtx;closeModal();addItem(C.id,C.pre)},
+ apadd:()=>{const C=U.modalCtx;const list=addonsFor(ITEM[C.id]);const mods=C.pre.concat(list.filter(a=>C.sel.includes(a.id)).map(a=>({n:a.name,p:a.price})));closeModal();addItem(C.id,mods)},
+ split2:()=>{const t=active();if(!t||!t.lines.length)return;U.sc={n:2,as:{},tab:t.id};goScreen('splitcheck')},
+ scadd:()=>{if(U.sc.n<8){U.sc.n++;renderContent()}},
+ scset:id=>{const[k,c]=id.split('|');U.sc.as[k]=+c;renderContent()},
+ scgo:()=>splitGo(),
+ evengo:id=>{const t=active();if(!t)return;if(!t.even||!t.even.paid.some(x=>x!=null))t.even={n:+id,paid:[]};U.pay={mode:null,split:'even',n:2,sel:{},tendered:'',guest:null};goScreen('pay')},
+ guest:id=>{U.pay.guest=+id;U.pay.mode=null;render()},
+ mgrpin:()=>{const a=$('#mp1').value,b=$('#mp2').value;if(!/^\d{4}$/.test(a)){notify('PIN must be 4 digits');return}if(a!==b){notify('PINs don’t match');return}S.mgrPin=a;save();renderContent();notify('Manager PIN changed')},
+ mgrlock:()=>{U.mgrUntil=0;closeModal();if(GATED.has(U.screen))U.screen='home';render();notify('🔒 Manager mode locked')}
+};
+document.addEventListener('click',e=>{const el=e.target.closest('[data-a]');if(!el||el.disabled)return;const f=ACT[el.dataset.a];if(f)f(el.dataset.id,el)});
+document.addEventListener('change',e=>{const el=e.target;if(el.id==='rfrom'||el.id==='rto'){U.rep[el.id==='rfrom'?'from':'to']=el.value;renderContent()}});
+document.addEventListener('keydown',e=>{if(!pinWrap())return;const ae=document.activeElement;if(ae&&(ae.tagName==='INPUT'||ae.tagName==='SELECT'))return;
+ if(/^\d$/.test(e.key)){e.preventDefault();pinKey(e.key)}else if(e.key==='Backspace'){e.preventDefault();pinKey('back')}});
+
 function tick(){const d=new Date();$('#clock').innerHTML=`<b>${d.toLocaleTimeString([], {hour:'numeric',minute:'2-digit'})}</b><span>${d.toLocaleDateString([], {weekday:'long',month:'short',day:'numeric',year:'numeric'})}</span>`}
 load();tick();setInterval(tick,10000);render();
 </script>
